@@ -114,6 +114,14 @@ app.get('/callback', function(req, res) {
         // use the access token to access the Spotify Web API
         request.get(optionsTop, function(error, response, body2) {
           console.log(body2);
+
+          var jsonData = body2.items[0].name;
+          var artistArray = []
+          for (var i = 0; i < body2.items.length; i++) {
+            artistArray[i] = body2.items[i].name;
+          }
+          console.log(artistArray);
+
         });
 
         // we can also pass the token to the browser to make requests from there
