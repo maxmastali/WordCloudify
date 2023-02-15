@@ -28,6 +28,8 @@
         <div id="oauth">
         </div>
         <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
+        <div id="top">
+        </div>
       </div>
     </div>
 
@@ -59,6 +61,14 @@
       </dl>
     </script>
 
+    <script id="top-template" type="text/x-handlebars-template">
+      <h3>Top Artist Info</h3>
+      <dl class="dl-horizontal">
+        <dt>1st artist</dt><dd class="text-overflow">{{items.0.name}}</dd>
+        <dt>2nd artist</dt><dd class="text-overflow">{{items.1.name}}</dd>
+      </dl>
+    </script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
@@ -86,6 +96,10 @@
             oauthTemplate = Handlebars.compile(oauthSource),
             oauthPlaceholder = document.getElementById('oauth');
 
+        var topSource = document.getElementById('top-template').innerHTML,
+            topTemplate = Handlebars.compile(topSource),
+            topPlaceholder = document.getElementById('top');
+
         var params = getHashParams();
 
         var access_token = params.access_token,
@@ -109,6 +123,19 @@
                 },
                 success: function(response) {
                   userProfilePlaceholder.innerHTML = userProfileTemplate(response);
+
+                  $('#login').hide();
+                  $('#loggedin').show();
+                }
+            });
+
+            $.ajax({
+                url: 'https://api.spotify.com/v1/me/top/artists',
+                headers: {
+                  'Authorization': 'Bearer ' + access_token
+                },
+                success: function(response) {
+                  topPlaceholder.innerHTML = topTemplate(response);
 
                   $('#login').hide();
                   $('#loggedin').show();

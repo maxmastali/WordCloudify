@@ -27,6 +27,8 @@
         </div>
         <div id="oauth">
         </div>
+        <div id="top">
+        </div>
       </div>
     </div>
 
@@ -54,6 +56,14 @@
       <h2>oAuth info</h2>
       <dl class="dl-horizontal">
         <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+      </dl>
+    </script>
+
+    <script id="top-template" type="text/x-handlebars-template">
+      <h3>oAuth info</h3>
+      <dl class="dl-horizontal">
+        <dt>Please work</dt><dd class="text-overflow">{{access_token}}</dd>
+        <dt>Please work2</dt><dd class="text-overflow">{{refresh_token}}</dd>
       </dl>
     </script>
 
@@ -100,6 +110,10 @@
             oauthSource = document.getElementById('oauth-template').innerHTML,
             oauthTemplate = Handlebars.compile(oauthSource),
             oauthPlaceholder = document.getElementById('oauth');
+
+            topSource = document.getElementById('top-template').innerHTML,
+            topTemplate = Handlebars.compile(topSource),
+            topPlaceholder = document.getElementById('top');
 
         var params = getHashParams();
 
