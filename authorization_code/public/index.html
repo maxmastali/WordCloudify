@@ -62,13 +62,17 @@
     </script>
 
     <script id="top-template" type="text/x-handlebars-template">
-      <h3>Top Artist Info</h3>
+      <!-- <h3>Top Artist Info</h3>
       <dl class="dl-horizontal">
         <dt>1st artist</dt><dd class="text-overflow">{{items.0.name}}</dd>
         <dt>2nd artist</dt><dd class="text-overflow">{{items.1.name}}</dd>
-      </dl>
+      </dl> -->
+      <canvas id="word_cloud" class="word_cloud" width="400" height="400"></canvas>
+  
+      <!-- <script  src="./script.js"></script> -->
     </script>
 
+    <script src="./wordcloud2.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
@@ -123,7 +127,7 @@
                 },
                 success: function(response) {
                   userProfilePlaceholder.innerHTML = userProfileTemplate(response);
-
+                  
                   $('#login').hide();
                   $('#loggedin').show();
                 }
@@ -136,6 +140,15 @@
                 },
                 success: function(response) {
                   topPlaceholder.innerHTML = topTemplate(response);
+
+                  tagList = [
+                    ['CSS', 12], 
+                    ['Script', 6],
+                    ['Com', 8]
+                  ]
+                  
+                  WordCloud.minFontSize = "15px"
+                  WordCloud(document.getElementById('word_cloud'), { list: tagList} );
 
                   $('#login').hide();
                   $('#loggedin').show();
