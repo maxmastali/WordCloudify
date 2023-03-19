@@ -141,14 +141,29 @@
                 success: function(response) {
                   topPlaceholder.innerHTML = topTemplate(response);
 
-                  tagList = [
-                    ['CSS', 12], 
-                    ['Script', 6],
-                    ['Com', 8]
-                  ]
+                  // tagList = [
+                  //   ['CSS', 40], 
+                  //   ['Script', 10],
+                  //   ['Com',30]
+                  // ]
                   
-                  WordCloud.minFontSize = "15px"
-                  WordCloud(document.getElementById('word_cloud'), { list: tagList} );
+                  // WordCloud.minFontSize = "50px"
+                  // WordCloud(document.getElementById('word_cloud'), { list: tagList} );
+
+                  var artistArray = []
+                  var num = 50
+                  for (var i = 0; i < response.items.length; i++) {
+                    if (num < 15) {
+                      num = 15
+                    }
+                    const artist = [response.items[i].name, num]
+                    artistArray[i] = artist
+                    num = num - 3
+                  }
+                  console.log(artistArray)
+
+                  WordCloud.minFontSize = "50px"
+                  WordCloud(document.getElementById('word_cloud'), { list: artistArray} );
 
                   $('#login').hide();
                   $('#loggedin').show();
