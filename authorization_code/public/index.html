@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Example of the Authorization Code flow with Spotify</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
     <style type="text/css">
       #login, #loggedin {
         display: none;
@@ -19,8 +20,19 @@
   <body>
     <div class="container">
       <div id="login">
-        <h1>This is an example of the Authorization Code flow</h1>
-        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+        <!-- <h1>This is an example of the Authorization Code flow</h1> -->
+        <h1>WordCloudify</h1>
+        
+        <div class="row">
+          <div class="col-sm-6" style="background-color:yellow;">
+            <!-- <h1>WordCloudify</h1> -->
+            <img class="media-object" width="300" src="./exampleWordcloud.png" />
+          </div>
+          <div class="col-sm-6" style="background-color:pink;">
+            <h2>Generate a word cloud with your top artists</h2>
+            <a href="/login" class="btn btn-success">Log in with Spotify</a>
+          </div>
+        </div>
       </div>
       <div id="loggedin">
         <div id="user-profile">
@@ -62,14 +74,21 @@
     </script>
 
     <script id="top-template" type="text/x-handlebars-template">
-      <!-- <h3>Top Artist Info</h3>
-      <dl class="dl-horizontal">
-        <dt>1st artist</dt><dd class="text-overflow">{{items.0.name}}</dd>
-        <dt>2nd artist</dt><dd class="text-overflow">{{items.1.name}}</dd>
-      </dl> -->
-      <canvas id="word_cloud" class="word_cloud" width="400" height="400"></canvas>
-  
-      <!-- <script  src="./script.js"></script> -->
+      <div class="row">
+        <div class="col-sm-5" style="background-color:pink;">
+          <canvas id="word_cloud" class="word_cloud" width="400" height="400"></canvas>
+        </div>
+        <div class="col-sm-5" style="background-color:yellow;">
+          <h1>Customize</h1>
+          <h2>Choose a time range</h2>
+          <div class="d-flex flex-row">
+            <button class="p-2" id='short_term'>4 weeks</button>
+            <button class="p-2" id="medium_term">6 months</button>
+            <button class="p-2" id="long_term">All time</button>
+            <script  src="./script.js"></script>
+          </div>
+        </div>
+      </div>
     </script>
 
     <script src="./wordcloud2.js"></script>
@@ -90,6 +109,51 @@
              hashParams[e[1]] = decodeURIComponent(e[2]);
           }
           return hashParams;
+        }
+
+        function getTopArtists(timeRange) {
+          $.ajax({
+                url: `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}`,
+                headers: {
+                  'Authorization': 'Bearer ' + access_token
+                },
+                success: function(response) {
+                  topPlaceholder.innerHTML = topTemplate(response);
+
+                  var artistArray = []
+                  var num = 50
+                  for (var i = 0; i < response.items.length; i++) {
+                    if (num < 15) {
+                      num = 15
+                    }
+                    const artist = [response.items[i].name, num]
+                    artistArray[i] = artist
+                    num = num - 3
+                  }
+                  console.log(artistArray)
+
+                  WordCloud.minFontSize = "50px"
+                  WordCloud(document.getElementById('word_cloud'), { list: artistArray} );
+
+                  document.getElementById('short_term').addEventListener('click', function() {
+                    getTopArtists("short_term")
+                    console.log("shorting...")
+                  });
+
+                  document.getElementById('medium_term').addEventListener('click', function() {
+                    getTopArtists("medium_term")
+                    console.log("mediuming...")
+                  });
+
+                  document.getElementById('long_term').addEventListener('click', function() {
+                    getTopArtists("long_term")
+                    console.log("longing...")
+                  });
+
+                  $('#login').hide();
+                  $('#loggedin').show();
+                }
+            });
         }
 
         var userProfileSource = document.getElementById('user-profile-template').innerHTML,
@@ -134,36 +198,13 @@
             });
 
             $.ajax({
-                url: 'https://api.spotify.com/v1/me/top/artists',
+                url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term',
                 headers: {
                   'Authorization': 'Bearer ' + access_token
                 },
                 success: function(response) {
-                  topPlaceholder.innerHTML = topTemplate(response);
 
-                  // tagList = [
-                  //   ['CSS', 40], 
-                  //   ['Script', 10],
-                  //   ['Com',30]
-                  // ]
-                  
-                  // WordCloud.minFontSize = "50px"
-                  // WordCloud(document.getElementById('word_cloud'), { list: tagList} );
-
-                  var artistArray = []
-                  var num = 50
-                  for (var i = 0; i < response.items.length; i++) {
-                    if (num < 15) {
-                      num = 15
-                    }
-                    const artist = [response.items[i].name, num]
-                    artistArray[i] = artist
-                    num = num - 3
-                  }
-                  console.log(artistArray)
-
-                  WordCloud.minFontSize = "50px"
-                  WordCloud(document.getElementById('word_cloud'), { list: artistArray} );
+                  getTopArtists("medium_term")
 
                   $('#login').hide();
                   $('#loggedin').show();
