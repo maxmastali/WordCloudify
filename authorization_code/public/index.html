@@ -88,11 +88,28 @@
         <div id="two" class="col-sm-5" style="background-color:yellow;">
           <h1>Customize</h1>
           <h2>Choose a time range</h2>
-          <div class="d-flex flex-row">
-            <button class="p-2" id='short_term'>4 weeks</button>
-            <button class="p-2" id="medium_term">6 months</button>
-            <button class="p-2" id="long_term">All time</button>
-            <script  src="./script.js"></script>
+          <div class="btn-toolbar">
+            <div class="btn-group mr-2">
+              <button class="btn timeBtn" id='short_term' onclick="myFunction()">4 weeks</button>
+            </div>
+            <div class="btn-group mr-2">
+              <button class="btn timeBtn" id="medium_term">6 months</button>
+            </div>
+            <div class="btn-group mr-2">
+              <button class="btn timeBtn" id="long_term">All time</button>
+            </div>
+          </div>
+          <h2>Choose a theme</h2>
+          <div class="btn-toolbar">
+            <div class="btn-group mr-2">
+              <button class="btn btn-secondary themeBtn" id='grunge'>Grunge</button>
+            </div>
+            <div class="btn-group mr-2">
+              <button class="btn btn-secondary themeBtn" id="rainbow">Rainbow</button>
+            </div>
+            <div class="btn-group mr-2">
+              <button class="btn btn-secondary themeBtn" id="bubblegum">Bubblegum</button>
+            </div>
           </div>
         </div>
       </div>
@@ -118,7 +135,7 @@
           return hashParams;
         }
 
-        function getTopArtists(timeRange) {
+        function getTopArtists(timeRange, theme) {
           $.ajax({
                 url: `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}`,
                 headers: {
@@ -139,22 +156,74 @@
                   }
                   console.log(artistArray)
 
+                  
+
                   WordCloud.minFontSize = "50px"
-                  WordCloud(document.getElementById('word_cloud'), { list: artistArray} );
+                  // WordCloud(document.getElementById('word_cloud'), {
+                  //   list: artistArray
+                  // } );
+
+                  if (theme == "grunge") {
+                    WordCloud(document.getElementById('word_cloud'), {
+                    list: artistArray,
+                    gridSize: 5,
+                    weightFactor: 1,
+                    fontFamily: 'Average, Times, serif',
+                    color: function() {
+                      return (['#d0d0d0', '#e11', '#44f'])[Math.floor(Math.random() * 3)]
+                    },
+                    backgroundColor: '#333'
+                  } );
+                    
+                  } else if (theme == "rainbow") {
+                    WordCloud(document.getElementById('word_cloud'), {
+                    list: artistArray,
+                    gridSize: 5,
+                    weightFactor:1,
+                    fontFamily: 'Finger Paint, cursive, sans-serif',
+                    color: '#f0f0c0',
+                    hover: window.drawBox,
+                    click: function(item) {
+                      alert(item[0] + ': ' + item[1]);
+                    },
+                    backgroundColor: '#001f00'
+                  } );
+
+                  } else {
+                    WordCloud(document.getElementById('word_cloud'), {
+                    list: artistArray
+                  } );
+
+                  }
 
                   document.getElementById('short_term').addEventListener('click', function() {
-                    getTopArtists("short_term")
+                    getTopArtists("short_term", theme)
                     console.log("shorting...")
                   });
 
                   document.getElementById('medium_term').addEventListener('click', function() {
-                    getTopArtists("medium_term")
+                    getTopArtists("medium_term", theme)
                     console.log("mediuming...")
                   });
 
                   document.getElementById('long_term').addEventListener('click', function() {
-                    getTopArtists("long_term")
+                    getTopArtists("long_term", theme)
                     console.log("longing...")
+                  });
+
+                  document.getElementById('grunge').addEventListener('click', function() {
+                    getTopArtists(timeRange, "grunge")
+                    console.log("grunging...")
+                  });
+
+                  document.getElementById('rainbow').addEventListener('click', function() {
+                    getTopArtists(timeRange, "rainbow")
+                    console.log("rainbowing...")
+                  });
+
+                  document.getElementById('bubblegum').addEventListener('click', function() {
+                    getTopArtists(timeRange, "bubblegum")
+                    console.log("bubbleguming...")
                   });
 
                   $('#login').hide();
@@ -185,7 +254,7 @@
                 },
                 success: function(response) {
 
-                  getTopArtists("medium_term")
+                  getTopArtists("medium_term", "grunge")
 
                   $('#login').hide();
                   $('#loggedin').show();
