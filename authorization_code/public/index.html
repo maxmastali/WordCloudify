@@ -5,52 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
-    <style type="text/css">
-      #login, #loggedin {
-        display: none;
-      }
-      .text-overflow {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 500px;
-      }
-
-      .wrapper { 
-        border : 2px solid #000; 
-        overflow:hidden;
-      }
-
-      .wrapper div {
-        min-height: 200px;
-        padding: 10px;
-      }
-      #one {
-        background-color: gray;
-        float:left; 
-        margin-right:20px;
-        width:200px;
-        border-right:2px solid #000;
-        min-width: 400px;
-      }
-      #two { 
-        background-color: white;
-        overflow:hidden;
-        margin:10px;
-        border:2px dashed #ccc;
-        min-height:170px;
-      }
-
-      @media screen and (max-width: 1000px) {
-        #one { 
-          float: none;
-          margin-right:0;
-          width:auto;
-          border:0;
-          border-bottom:2px solid #000;    
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./styles.css">
   </head>
 
   <body>
@@ -73,201 +28,60 @@
       <div id="loggedin">
         <div id="top">
         </div>
+        <div class="row wrapper">
+          <div id="one" class="col-sm-5" style="background-color:pink;">
+            <canvas id="word_cloud" class="word_cloud" width="400" height="400"></canvas>
+          </div>
+    
+          <div id="two" class="col-sm-5" style="background-color:yellow;">
+            <h1>Customize</h1>
+            <h2>Choose a time range</h2>
+            <div class="btn-toolbar">
+              <div class="btn-group mr-2">
+                <button class="btn timeBtn" id='short_term'>Last Month</button>
+              </div>
+              <div class="btn-group mr-2">
+                <button class="btn timeBtn" id='medium_term'>Last 6 Months</button>
+              </div>
+              <div class="btn-group mr-2">
+                <button class="btn timeBtn" id='long_term'>All Time</button>
+              </div>
+            </div>
+            <!-- <div class="btn-toolbar">
+              <form class="btn-group" role="group" aria-label="Time period selection" id="options">
+                <input type="radio" class="btn-check" name="period-select" id="short_term" autocomplete="off" value="short_term"/>
+                <label class="btn btn-outline-secondary form-check-label" for="short_term">Last Month</label>
+    
+                <input type="radio" class="btn-check" name="period-select" id="medium_term" autocomplete="off" checked value="medium_term"/>
+                <label class="btn btn-outline-secondary form-check-label" for="medium_term">Last 6 Months</label>
+    
+                <input type="radio" class="btn-check" name="period-select" id="long_term" autocomplete="off" value="long_term"/>
+                <label class="btn btn-outline-secondary form-check-label" for="long_term">All Time</label>
+              </form>
+            </div> -->
+            <h2>Choose a theme</h2>
+            <div class="btn-toolbar">
+              <div class="btn-group mr-2">
+                <button class="btn themeBtn" id='grunge'>Grunge</button>
+              </div>
+              <div class="btn-group mr-2">
+                <button class="btn themeBtn" id="rainbow">Rainbow</button>
+              </div>
+              <div class="btn-group mr-2">
+                <button class="btn themeBtn" id="bubblegum">Bubblegum</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     <div class="wrapper">
       <div id="one">one</div>
       <div id="two">two</div>
     </div>
 
-    <script id="top-template" type="text/x-handlebars-template">
-      <div class="row wrapper">
-        <div id="one" class="col-sm-5" style="background-color:pink;">
-          <canvas id="word_cloud" class="word_cloud" width="400" height="400"></canvas>
-        </div>
-        <div id="two" class="col-sm-5" style="background-color:yellow;">
-          <h1>Customize</h1>
-          <h2>Choose a time range</h2>
-          <div class="btn-toolbar">
-            <div class="btn-group mr-2">
-              <button class="btn timeBtn" id='short_term' onclick="myFunction()">4 weeks</button>
-            </div>
-            <div class="btn-group mr-2">
-              <button class="btn timeBtn" id="medium_term">6 months</button>
-            </div>
-            <div class="btn-group mr-2">
-              <button class="btn timeBtn" id="long_term">All time</button>
-            </div>
-          </div>
-          <h2>Choose a theme</h2>
-          <div class="btn-toolbar">
-            <div class="btn-group mr-2">
-              <button class="btn btn-secondary themeBtn" id='grunge'>Grunge</button>
-            </div>
-            <div class="btn-group mr-2">
-              <button class="btn btn-secondary themeBtn" id="rainbow">Rainbow</button>
-            </div>
-            <div class="btn-group mr-2">
-              <button class="btn btn-secondary themeBtn" id="bubblegum">Bubblegum</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </script>
-
     <script src="./wordcloud2.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script>
-      (function() {
-
-        /**
-         * Obtains parameters from the hash of the URL
-         * @return Object
-         */
-        function getHashParams() {
-          var hashParams = {};
-          var e, r = /([^&;=]+)=?([^&;]*)/g,
-              q = window.location.hash.substring(1);
-          while ( e = r.exec(q)) {
-             hashParams[e[1]] = decodeURIComponent(e[2]);
-          }
-          return hashParams;
-        }
-
-        function getTopArtists(timeRange, theme) {
-          $.ajax({
-                url: `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}`,
-                headers: {
-                  'Authorization': 'Bearer ' + access_token
-                },
-                success: function(response) {
-                  topPlaceholder.innerHTML = topTemplate(response);
-
-                  var artistArray = []
-                  var num = 50
-                  for (var i = 0; i < response.items.length; i++) {
-                    if (num < 15) {
-                      num = 15
-                    }
-                    const artist = [response.items[i].name, num]
-                    artistArray[i] = artist
-                    num = num - 3
-                  }
-                  console.log(artistArray)
-
-                  
-
-                  WordCloud.minFontSize = "50px"
-                  // WordCloud(document.getElementById('word_cloud'), {
-                  //   list: artistArray
-                  // } );
-
-                  if (theme == "grunge") {
-                    WordCloud(document.getElementById('word_cloud'), {
-                    list: artistArray,
-                    gridSize: 5,
-                    weightFactor: 1,
-                    fontFamily: 'Average, Times, serif',
-                    color: function() {
-                      return (['#d0d0d0', '#e11', '#44f'])[Math.floor(Math.random() * 3)]
-                    },
-                    backgroundColor: '#333'
-                  } );
-                    
-                  } else if (theme == "rainbow") {
-                    WordCloud(document.getElementById('word_cloud'), {
-                    list: artistArray,
-                    gridSize: 5,
-                    weightFactor:1,
-                    fontFamily: 'Finger Paint, cursive, sans-serif',
-                    color: '#f0f0c0',
-                    hover: window.drawBox,
-                    click: function(item) {
-                      alert(item[0] + ': ' + item[1]);
-                    },
-                    backgroundColor: '#001f00'
-                  } );
-
-                  } else {
-                    WordCloud(document.getElementById('word_cloud'), {
-                    list: artistArray
-                  } );
-
-                  }
-
-                  document.getElementById('short_term').addEventListener('click', function() {
-                    getTopArtists("short_term", theme)
-                    console.log("shorting...")
-                  });
-
-                  document.getElementById('medium_term').addEventListener('click', function() {
-                    getTopArtists("medium_term", theme)
-                    console.log("mediuming...")
-                  });
-
-                  document.getElementById('long_term').addEventListener('click', function() {
-                    getTopArtists("long_term", theme)
-                    console.log("longing...")
-                  });
-
-                  document.getElementById('grunge').addEventListener('click', function() {
-                    getTopArtists(timeRange, "grunge")
-                    console.log("grunging...")
-                  });
-
-                  document.getElementById('rainbow').addEventListener('click', function() {
-                    getTopArtists(timeRange, "rainbow")
-                    console.log("rainbowing...")
-                  });
-
-                  document.getElementById('bubblegum').addEventListener('click', function() {
-                    getTopArtists(timeRange, "bubblegum")
-                    console.log("bubbleguming...")
-                  });
-
-                  $('#login').hide();
-                  $('#loggedin').show();
-                }
-            });
-        }
-
-        var topSource = document.getElementById('top-template').innerHTML,
-            topTemplate = Handlebars.compile(topSource),
-            topPlaceholder = document.getElementById('top');
-
-        var params = getHashParams();
-
-        var access_token = params.access_token,
-            refresh_token = params.refresh_token,
-            error = params.error;
-
-        if (error) {
-          alert('There was an error during the authentication');
-        } else {
-          if (access_token) {
-
-            $.ajax({
-                url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term',
-                headers: {
-                  'Authorization': 'Bearer ' + access_token
-                },
-                success: function(response) {
-
-                  getTopArtists("medium_term", "grunge")
-
-                  $('#login').hide();
-                  $('#loggedin').show();
-                }
-            });
-          } else {
-              // render initial screen
-              $('#login').show();
-              $('#loggedin').hide();
-          }
-        }
-      })();
-    </script>
+    <script src="./server.js"></script>
   </body>
 </html>
 

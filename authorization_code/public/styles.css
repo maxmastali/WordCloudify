@@ -1,0 +1,55 @@
+#login, #loggedin {
+    display: none;
+}
+
+.text-overflow {
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+width: 500px;
+}
+
+.wrapper { 
+border : 2px solid #000; 
+overflow:hidden;
+}
+
+.wrapper div {
+min-height: 200px;
+padding: 10px;
+}
+#one {
+background-color: gray;
+float:left; 
+margin-right:20px;
+width:200px;
+border-right:2px solid #000;
+min-width: 400px;
+}
+#two { 
+background-color: white;
+overflow:hidden;
+margin:10px;
+border:2px dashed #ccc;
+min-height:170px;
+}
+
+.themeBtn:focus {
+outline: none;
+box-shadow: none;
+}
+
+.timeBtn:focus {
+outline: none;
+box-shadow: none;
+}
+
+@media screen and (max-width: 1000px) {
+#one { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;    
+}
+}
