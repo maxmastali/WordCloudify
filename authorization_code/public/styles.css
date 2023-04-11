@@ -44,6 +44,22 @@ outline: none;
 box-shadow: none;
 }
 
+
+  @font-face {
+    font-family: myFirstFont;
+    src: url("./CloudyCloud-nREq4.otf") format("opentype");
+  }
+  
+  #header {
+    font-family: myFirstFont;
+    font-size: 2em;
+  }
+
+  #info {
+    margin-right: 20px;
+  }
+
+
 @media screen and (max-width: 1000px) {
 #one { 
     float: none;

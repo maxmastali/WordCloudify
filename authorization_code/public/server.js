@@ -85,55 +85,6 @@ var globalTheme = "grunge";
 
               }
 
-            //   document.getElementById('short_term').addEventListener('click', function() {
-            //     getTopArtists("short_term")
-            //     console.log("shorting...")
-            //   });
-
-            //   document.getElementById('medium_term').addEventListener('click', function() {
-            //     getTopArtists("medium_term")
-            //     console.log("mediuming...")
-            //   });
-
-            //   document.getElementById('long_term').addEventListener('click', function() {
-            //     getTopArtists("long_term")
-            //     console.log("longing...")
-            //   });
-
-            //   document.getElementById('grunge').addEventListener('click', function() {
-            //     getTopArtists(timeRange, "grunge")
-            //     console.log("grunging...")
-            //   });
-
-            //   document.getElementById('rainbow').addEventListener('click', function() {
-            //     getTopArtists(timeRange, "rainbow")
-            //     console.log("rainbowing...")
-            //   });
-
-            //   document.getElementById('bubblegum').addEventListener('click', function() {
-            //     getTopArtists(timeRange, "bubblegum")
-            //     console.log("bubbleguming...")
-            //   });
-
-
-              // const buttons = document.querySelectorAll('.timeBtn');
-
-              // buttons.forEach(button => {
-              //   button.addEventListener('click', function() {
-              //     seatFunction(button)
-              //   });
-              // });
-
-              // function seatFunction(a) {
-              //   buttons.forEach(button => {
-              //     //button.style.background = "none";
-              //     document.querySelector('.special')?.classList.remove('special')
-              //     //button.classList.add('special');
-              //   });
-              //   a.classList.add('special')
-              //   //a.style.background = "red";
-              // }
-
               $('#login').hide();
               $('#loggedin').show();
             }
