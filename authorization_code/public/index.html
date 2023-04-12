@@ -72,14 +72,14 @@
         <div id="top">
         </div>
         <div class="row wrapper">
-          <div id="one" class="col-sm-5" style="background-color:pink;">
-            <canvas id="word_cloud" class="word_cloud" width="400" height="400"></canvas>
+          <div id="one" class="col-sm-5" style="background-color:pink; text-align:center;">
+            <canvas id="word_cloud" class="word_cloud" width="525" height="525" style="margin:auto;"></canvas>
           </div>
     
-          <div id="two" class="col-sm-5" style="background-color:yellow;">
+          <div class="col-sm-5" style="background-color:yellow; min-width: 500px;">
             <h1>Customize</h1>
             <h2>Choose a time range</h2>
-            <div class="btn-toolbar">
+            <div class="btn-toolbar" id="button-group">
               <div class="btn-group mr-2">
                 <button class="btn timeBtn" id='short_term'>Last Month</button>
               </div>
@@ -103,7 +103,7 @@
               </form>
             </div> -->
             <h2>Choose a theme</h2>
-            <div class="btn-toolbar">
+            <div class="btn-toolbar" id="button-group2">
               <div class="btn-group mr-2">
                 <button class="btn themeBtn" id='grunge'>Grunge</button>
               </div>

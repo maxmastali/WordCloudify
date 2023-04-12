@@ -26,7 +26,7 @@ var globalTheme = "grunge";
             success: function(response) {
 
               var artistArray = []
-              var num = 50
+              var num = 75
               for (var i = 0; i < response.items.length; i++) {
                 if (num < 15) {
                   num = 15

@@ -18,13 +18,28 @@ overflow:hidden;
 min-height: 200px;
 padding: 10px;
 }
+
+#button-group {
+  max-height: 70px;
+  min-height: 50px;
+  max-width: 1000px;
+  min-width: 100px;
+  background-color: antiquewhite;
+}
+
+#button-group2 {
+  max-height: 70px;
+  min-height: 50px;
+  background-color: antiquewhite;
+}
+
 #one {
 background-color: gray;
 float:left; 
 margin-right:20px;
 width:200px;
 border-right:2px solid #000;
-min-width: 400px;
+min-width: 575px;
 }
 #two { 
 background-color: white;
@@ -34,15 +49,26 @@ border:2px dashed #ccc;
 min-height:170px;
 }
 
-.themeBtn:focus {
-outline: none;
-box-shadow: none;
-}
+  .themeBtn {
+    max-height: 15px;
+  }
 
-.timeBtn:focus {
-outline: none;
-box-shadow: none;
-}
+  .themeBtn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .timeBtn {
+    max-height: 15px;
+  }
+
+  .timeBtn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+
+  
 
 
   @font-face {
@@ -58,6 +84,7 @@ box-shadow: none;
   #info {
     margin-right: 20px;
   }
+
 
 
 @media screen and (max-width: 1000px) {
