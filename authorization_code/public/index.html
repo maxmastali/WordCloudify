@@ -49,16 +49,15 @@
           </div>
         </div>
       </div>
-    </div>
-        
-</div>
-    <div class="container">
+    </div> 
+
+    <div class="container" style="padding-top: 10px;">
       <div id="login">
         <!-- <h1>This is an example of the Authorization Code flow</h1> -->
         <h1>WordCloudify</h1>
         
         <div class="row">
-          <div class="col-sm-6" style="background-color:yellow;">
+          <div class="col-sm-6">
             <!-- <h1>WordCloudify</h1> -->
             <img class="media-object" width="300" src="./exampleWordcloud.png" />
           </div>
@@ -72,55 +71,33 @@
         <div id="top">
         </div>
         <div class="row wrapper">
-          <div id="one" class="col-sm-5" style="background-color:pink; text-align:center;">
-            <canvas id="word_cloud" class="word_cloud" width="525" height="525" style="margin:auto;"></canvas>
+          <div id="one" class="col-sm-5">
+            <canvas id="word_cloud" class="word_cloud" width="500" height="500"></canvas>
           </div>
     
-          <div class="col-sm-5" style="background-color:yellow; min-width: 500px;">
-            <h1>Customize</h1>
-            <h2>Choose a time range</h2>
-            <div class="btn-toolbar" id="button-group">
-              <div class="btn-group mr-2">
+          <div class="col-sm-5" id="two">
+            <div style="max-height: 325px;">
+              <h1 class="label">Customize</h1>
+              <h2 class="label">Choose a time range</h2>
+              <div class="btn-toolbar" id="button-group">
                 <button class="btn timeBtn" id='short_term'>Last Month</button>
-              </div>
-              <div class="btn-group mr-2">
                 <button class="btn timeBtn" id='medium_term'>Last 6 Months</button>
-              </div>
-              <div class="btn-group mr-2">
                 <button class="btn timeBtn" id='long_term'>All Time</button>
               </div>
-            </div>
-            <!-- <div class="btn-toolbar">
-              <form class="btn-group" role="group" aria-label="Time period selection" id="options">
-                <input type="radio" class="btn-check" name="period-select" id="short_term" autocomplete="off" value="short_term"/>
-                <label class="btn btn-outline-secondary form-check-label" for="short_term">Last Month</label>
-    
-                <input type="radio" class="btn-check" name="period-select" id="medium_term" autocomplete="off" checked value="medium_term"/>
-                <label class="btn btn-outline-secondary form-check-label" for="medium_term">Last 6 Months</label>
-    
-                <input type="radio" class="btn-check" name="period-select" id="long_term" autocomplete="off" value="long_term"/>
-                <label class="btn btn-outline-secondary form-check-label" for="long_term">All Time</label>
-              </form>
-            </div> -->
-            <h2>Choose a theme</h2>
-            <div class="btn-toolbar" id="button-group2">
-              <div class="btn-group mr-2">
+              <h2 class="label">Choose a theme</h2>
+              <div class="btn-toolbar" id="button-group2">
                 <button class="btn themeBtn" id='grunge'>Grunge</button>
-              </div>
-              <div class="btn-group mr-2">
                 <button class="btn themeBtn" id="rainbow">Rainbow</button>
-              </div>
-              <div class="btn-group mr-2">
                 <button class="btn themeBtn" id="bubblegum">Bubblegum</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    <div class="wrapper">
+    <!-- <div class="wrapper">
       <div id="one">one</div>
       <div id="two">two</div>
-    </div>
+    </div> -->
 
     <script src="./wordcloud2.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>

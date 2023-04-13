@@ -2,15 +2,7 @@
     display: none;
 }
 
-.text-overflow {
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-width: 500px;
-}
-
 .wrapper { 
-border : 2px solid #000; 
 overflow:hidden;
 }
 
@@ -22,31 +14,31 @@ padding: 10px;
 #button-group {
   max-height: 70px;
   min-height: 50px;
-  max-width: 1000px;
+  max-width: 450px;
   min-width: 100px;
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
 }
 
 #button-group2 {
   max-height: 70px;
   min-height: 50px;
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
 }
 
 #one {
-background-color: gray;
-float:left; 
-margin-right:20px;
+/* background-color: gray; */
+/* float:left;  */
+/* margin-right:20px; */
 width:200px;
-border-right:2px solid #000;
-min-width: 575px;
+min-width: 550px;
 }
 #two { 
-background-color: white;
+/* background-color: white; */
 overflow:hidden;
-margin:10px;
-border:2px dashed #ccc;
+/* margin:10px;
+border:2px dashed #ccc; */
 min-height:170px;
+padding-top: 100px;
 }
 
   .themeBtn {
@@ -85,14 +77,47 @@ min-height:170px;
     margin-right: 20px;
   }
 
+  .label {
+    text-align: left;
+  }
+
 
 
 @media screen and (max-width: 1000px) {
-#one { 
-    float: none;
-    margin-right:0;
-    width:auto;
-    border:0;
-    border-bottom:2px solid #000;    
+  /* #one { 
+      float: none;
+      margin-right:0;
+      width:auto;
+      border:0;
+      border-bottom:2px solid #000;   
+  } */
 }
+
+
+@media screen and (max-width: 1200px) {
+  .wrapper { 
+    overflow:hidden;
+    text-align: center;
+  }
+
+  #one {
+    /* background-color: gray; */
+    /* float:left;  */
+    /* margin-right:20px; */
+    width:200px;
+    border-right:2px solid #000;
+    min-width: 550px;
+    margin:auto;
+  }
+
+
+  #two { 
+    background-color: white;
+    overflow:hidden;
+    min-height:170px;
+    padding-top: 0px;
+    min-width: 500px;
+    margin:auto;
+  }
+
 }

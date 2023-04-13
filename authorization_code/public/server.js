@@ -26,7 +26,7 @@ var globalTheme = "grunge";
             success: function(response) {
 
               var artistArray = []
-              var num = 75
+              var num = 60
               for (var i = 0; i < response.items.length; i++) {
                 if (num < 15) {
                   num = 15
@@ -111,9 +111,11 @@ var globalTheme = "grunge";
             success: function(response) {
                 var defaultTimeObject = document.getElementById('medium_term')
                 defaultTimeObject.style.textDecoration = "underline"
+                defaultTimeObject.style.textUnderlinePosition = "under"
 
                 var defaultThemeObject = document.getElementById('rainbow')
                 defaultThemeObject.style.textDecoration = "underline"
+                defaultThemeObject.style.textUnderlinePosition = "under"
                 getTopArtists("medium_term", "grunge")
 
                 $('#login').hide();
@@ -186,6 +188,7 @@ var globalTheme = "grunge";
       //a.classList.add('special')
       //a.style.background = "red";
       a.style.textDecoration = "underline"
+      a.style.textUnderlinePosition = "under"
     }
 
   })();
