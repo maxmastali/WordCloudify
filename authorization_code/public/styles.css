@@ -16,13 +16,21 @@ padding: 10px;
   min-height: 50px;
   max-width: 450px;
   min-width: 100px;
+  padding-left: 0px;
+  padding-top: 0px;
   /* background-color: antiquewhite; */
 }
 
 #button-group2 {
   max-height: 70px;
   min-height: 50px;
+  padding-left: 0px;
+  padding-top: 0px;
   /* background-color: antiquewhite; */
+}
+
+.leftMostCustomBtn {
+  padding-left: 0px;
 }
 
 #one {

@@ -53,12 +53,10 @@
 
     <div class="container" style="padding-top: 10px;">
       <div id="login">
-        <!-- <h1>This is an example of the Authorization Code flow</h1> -->
         <h1>WordCloudify</h1>
         
         <div class="row">
           <div class="col-sm-6">
-            <!-- <h1>WordCloudify</h1> -->
             <img class="media-object" width="300" src="./exampleWordcloud.png" />
           </div>
           <div class="col-sm-6" style="background-color:pink;">
@@ -73,6 +71,7 @@
         <div class="row wrapper">
           <div id="one" class="col-sm-5">
             <canvas id="word_cloud" class="word_cloud" width="500" height="500"></canvas>
+            <img src="./Spotify_Logo_CMYK_Black.png" style="width: 200px; height: auto;">
           </div>
     
           <div class="col-sm-5" id="two">
@@ -80,13 +79,13 @@
               <h1 class="label">Customize</h1>
               <h2 class="label">Choose a time range</h2>
               <div class="btn-toolbar" id="button-group">
-                <button class="btn timeBtn" id='short_term'>Last Month</button>
+                <button class="btn timeBtn leftMostCustomBtn" id='short_term'>Last Month</button>
                 <button class="btn timeBtn" id='medium_term'>Last 6 Months</button>
                 <button class="btn timeBtn" id='long_term'>All Time</button>
               </div>
               <h2 class="label">Choose a theme</h2>
               <div class="btn-toolbar" id="button-group2">
-                <button class="btn themeBtn" id='grunge'>Grunge</button>
+                <button class="btn themeBtn leftMostCustomBtn" id='grunge'>Grunge</button>
                 <button class="btn themeBtn" id="rainbow">Rainbow</button>
                 <button class="btn themeBtn" id="bubblegum">Bubblegum</button>
               </div>
@@ -94,6 +93,11 @@
           </div>
         </div>
       </div>
+      <div style="text-align: center; padding-top: 100px;">
+        <img src="./Spotify_Logo_CMYK_Black.png" style="width: 100px; height: auto;">
+        <h2 style="padding-top: 10px;"> Made by Max Mastali</h2>
+      </div>
+      
     <!-- <div class="wrapper">
       <div id="one">one</div>
       <div id="two">two</div>

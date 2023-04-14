@@ -116,7 +116,7 @@ var globalTheme = "grunge";
                 var defaultThemeObject = document.getElementById('rainbow')
                 defaultThemeObject.style.textDecoration = "underline"
                 defaultThemeObject.style.textUnderlinePosition = "under"
-                getTopArtists("medium_term", "grunge")
+                getTopArtists("medium_term", "rainbow")
 
                 $('#login').hide();
                 $('#loggedin').show();
