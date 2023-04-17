@@ -19,21 +19,21 @@ var globalTheme = "grunge";
 
     function getTopArtists(timeRange, theme) {
       $.ajax({
-            url: `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}`,
+            url: `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}&limit=25`,
             headers: {
               'Authorization': 'Bearer ' + access_token
             },
             success: function(response) {
 
               var artistArray = []
-              var num = 60
+              var num = 50
               for (var i = 0; i < response.items.length; i++) {
-                if (num < 15) {
-                  num = 15
+                if (num < 13) {
+                  num = 13
                 }
                 const artist = [response.items[i].name, num]
                 artistArray[i] = artist
-                num = num - 3
+                num = num - 2
               }
               console.log(artistArray)
 
@@ -47,7 +47,7 @@ var globalTheme = "grunge";
 
               
 
-              WordCloud.minFontSize = "50px"
+              WordCloud.minFontSize = "25px"
             //   WordCloud(document.getElementById('word_cloud'), {
             //     list: artistArray
             //   } );
@@ -63,6 +63,8 @@ var globalTheme = "grunge";
                 },
                 backgroundColor: '#333'
               } );
+
+
                 
               } else if (theme == "rainbow") {
                 WordCloud(document.getElementById('word_cloud'), {
@@ -162,6 +164,12 @@ var globalTheme = "grunge";
         globalTheme = "bubblegum"
         getTopArtists(globalTime, "bubblegum")
         console.log("bubbleguming...")
+
+        // var c = document.getElementById("word_cloud");
+        // var ctx = c.getContext("2d");
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(0, 0, 500, 500);
+        // ctx.clearRect(0, 0, 300, 500);
     });
 
     const timeButtons = document.querySelectorAll('.timeBtn');
@@ -179,6 +187,20 @@ var globalTheme = "grunge";
       });
     });
 
+
+    // var canvas = document.getElementById('layer2')
+    // if (canvas.getContext) {
+    //   var layout = canvas.getContext('2d');
+    //   var image = new Image();
+    //   image.src = "./Spotify_Logo_CMYK_Black.png";
+    //   image.onload = function() {
+    //   layout.drawImage(image, 0, 0, 100, 30);
+    // }
+    // }
+
+    document.getElementById('spotifyImage').setAttribute('draggable', false);
+
+
     function updateButtonStyling(a, buttons) {
       buttons.forEach(button => {
         button.style.textDecoration = "none";
@@ -190,5 +212,35 @@ var globalTheme = "grunge";
       a.style.textDecoration = "underline"
       a.style.textUnderlinePosition = "under"
     }
+
+    document.getElementById('download').addEventListener('click', function(e) {
+      // let canvas = document.getElementById('cloudContainer')
+
+      // // Convert our canvas to a data URL
+      // let canvasUrl = canvas.toDataURL();
+      // // Create an anchor, and set the href value to our data URL
+      // const createEl = document.createElement('a');
+      // createEl.href = canvasUrl;
+  
+      // // This is the name of our downloaded file
+      // createEl.download = "top-artists-wordcloud";
+  
+      // // Click the download button, causing a download, and then remove it
+      // createEl.click();
+      // createEl.remove();
+
+      var container = document.getElementById("cloudContainer");; /* full page */
+      html2canvas(container, { allowTaint: true, scale: 12 }).then(function (canvas) {
+
+          var link = document.createElement("a");
+          document.body.appendChild(link);
+          link.download = "top_artists_wordcloud.jpg";
+          link.href = canvas.toDataURL();
+          link.target = '_blank';
+          link.click();
+      });
+
+
+    });
 
   })();

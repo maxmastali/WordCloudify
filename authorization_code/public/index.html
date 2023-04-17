@@ -15,7 +15,7 @@
   <body>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <a id="header">WordCloudify</a>
+        <a class="header wordcloudifyFont">WordCloudify</a>
         <div class="d-flex">
           <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16" data-toggle="modal" data-target="#infoModal" id="info">
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -53,29 +53,57 @@
 
     <div class="container" style="padding-top: 10px;">
       <div id="login">
-        <h1>WordCloudify</h1>
-        
-        <div class="row">
-          <div class="col-sm-6">
+        <div class="row wrapper">
+          <div id="one" class="col-sm-5">
+            <img class="media-object" width="500" src="./exampleWordcloud.png" />
+          </div>
+    
+          <div class="col-sm-5" id="two">
+            <h2>Generate a word cloud with your top artists</h2>
+            <a href="/login" class="btn btn-success">Log in with Spotify</a>
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class="col-sm-6" style="background-color: aquamarine;">
             <img class="media-object" width="300" src="./exampleWordcloud.png" />
           </div>
           <div class="col-sm-6" style="background-color:pink;">
             <h2>Generate a word cloud with your top artists</h2>
             <a href="/login" class="btn btn-success">Log in with Spotify</a>
           </div>
-        </div>
+        </div> -->
       </div>
       <div id="loggedin">
         <div id="top">
         </div>
         <div class="row wrapper">
           <div id="one" class="col-sm-5">
-            <canvas id="word_cloud" class="word_cloud" width="500" height="500"></canvas>
-            <img src="./Spotify_Logo_CMYK_Black.png" style="width: 200px; height: auto;">
+            <!-- <div style="position: relative;">
+              <canvas id="word_cloud" width="500" height="500" 
+                style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+              <canvas id="layer2" width="500" height="500" 
+                style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+             </div> -->
+            <div id="cloudContainer">
+              <h3 style="padding-bottom: 0px;">Presented by
+                <span class="wordcloudifyFont">WordCloudify</span>
+              </h3>
+              <canvas id="word_cloud" class="word_cloud box" width="550px" height="400px" style="padding-top: 0px;"></canvas>
+              <!-- <img src="./Spotify_Logo_CMYK_Black.png" class="overlay box" id="spotifyWatermark"> -->
+              <!-- <img src="./Spotify_Logo_CMYK_Black.png" id="spotifyImage"> -->
+
+              <img src="./Spotify_Logo_CMYK_Black.png" id="spotifyWatermark">
+            </div>
+
+            
+
+            <!-- <img src="./Spotify_Logo_CMYK_Black.png" class="overlay box" style="width: 150px; height: auto; padding-top: 0px;"> -->
+            
           </div>
     
           <div class="col-sm-5" id="two">
-            <div style="max-height: 325px;">
+            <div style="max-height: 325px; padding-left: 20px;">
               <h1 class="label">Customize</h1>
               <h2 class="label">Choose a time range</h2>
               <div class="btn-toolbar" id="button-group">
@@ -89,12 +117,13 @@
                 <button class="btn themeBtn" id="rainbow">Rainbow</button>
                 <button class="btn themeBtn" id="bubblegum">Bubblegum</button>
               </div>
+              <button type="button" class="btn btn-primary" id="download">Download Image</button>
             </div>
           </div>
         </div>
       </div>
       <div style="text-align: center; padding-top: 100px;">
-        <img src="./Spotify_Logo_CMYK_Black.png" style="width: 100px; height: auto;">
+        <img src="./Spotify_Logo_CMYK_Black.png" style="width: 100px; height: auto;" id="spotifyImage">
         <h2 style="padding-top: 10px;"> Made by Max Mastali</h2>
       </div>
       
@@ -107,6 +136,7 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="./server.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
   </body>
 </html>
 

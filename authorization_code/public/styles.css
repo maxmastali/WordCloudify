@@ -4,6 +4,7 @@
 
 .wrapper { 
 overflow:hidden;
+padding-left: 170px;
 }
 
 .wrapper div {
@@ -31,6 +32,19 @@ padding: 10px;
 
 .leftMostCustomBtn {
   padding-left: 0px;
+}
+
+#outer-div {
+  width: 100%;
+  text-align: center;
+  background-color: #0666a3
+}
+
+#inner-div {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 3px;
+  background-color: #8ebf42
 }
 
 #one {
@@ -67,8 +81,41 @@ padding-top: 100px;
     box-shadow: none;
   }
 
+  .overlay {
+    z-index: 2;
+    margin-top: 450px;
+  }
 
-  
+
+  #cloudContainer {
+    width: 550px;
+    height: 500px;
+    /* position: relative; */
+  }
+
+  /* .box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  } */
+
+  /* #wordcloud {
+    z-index: 1;
+  } */
+
+  #spotifyWatermark {
+    width: 100px;
+    height: auto;
+  }
+
+  /* #spotifyImage {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+  } */
+
+
 
 
   @font-face {
@@ -76,9 +123,12 @@ padding-top: 100px;
     src: url("./CloudyCloud-nREq4.otf") format("opentype");
   }
   
-  #header {
-    font-family: myFirstFont;
+  .header {
     font-size: 2em;
+  }
+
+  .wordcloudifyFont {
+    font-family: myFirstFont;
   }
 
   #info {
@@ -106,6 +156,7 @@ padding-top: 100px;
   .wrapper { 
     overflow:hidden;
     text-align: center;
+    padding-left: 0px;
   }
 
   #one {
@@ -113,7 +164,6 @@ padding-top: 100px;
     /* float:left;  */
     /* margin-right:20px; */
     width:200px;
-    border-right:2px solid #000;
     min-width: 550px;
     margin:auto;
   }
