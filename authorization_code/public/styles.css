@@ -116,6 +116,11 @@ padding-top: 100px;
   } */
 
 
+  #navBarWordCloudify {
+    color: black;
+    text-decoration: none !important;
+  }
+
 
 
   @font-face {
