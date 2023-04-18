@@ -52,38 +52,47 @@ var globalTheme = "grunge";
             //     list: artistArray
             //   } );
 
-              if (theme == "grunge") {
+              if (theme == "summer") {
                 WordCloud(document.getElementById('word_cloud'), {
                 list: artistArray,
                 gridSize: 5,
                 weightFactor: 1,
-                fontFamily: 'Average, Times, serif',
                 color: function() {
-                  return (['#d0d0d0', '#e11', '#44f'])[Math.floor(Math.random() * 3)]
-                },
-                backgroundColor: '#333'
-              } );
+                  return (['#f8ad00', '#f4ea00', '#00c1e3', '#70e4df', '#b5ecb7', '#d87d7d'])[Math.floor(Math.random() * 6)]
+                }
+              });
 
 
-                
-              } else if (theme == "rainbow") {
+
+              } else if (theme == "fall") {
                 WordCloud(document.getElementById('word_cloud'), {
+                  list: artistArray,
+                  gridSize: 5,
+                  weightFactor: 1,
+                  color: function() {
+                    return (['#eb781b', '#871c0e', '#004600', '#faa943', '#753473'])[Math.floor(Math.random() * 5)]
+                  }
+              });
+
+              } else if (theme == "spring") {
+                WordCloud(document.getElementById('word_cloud'), {
+                  list: artistArray,
+                  gridSize: 5,
+                  weightFactor: 1,
+                  color: function() {
+                    return (['#f9939d', '#69b500', '#ce5a6a', '#e3abca', '#f8d684'])[Math.floor(Math.random() * 5)]
+                  }
+              });
+
+            } else if (theme == "winter") {
+              WordCloud(document.getElementById('word_cloud'), {
                 list: artistArray,
                 gridSize: 5,
-                weightFactor:1,
-                fontFamily: 'Finger Paint, cursive, sans-serif',
-                color: '#f0f0c0',
-                hover: window.drawBox,
-                click: function(item) {
-                  alert(item[0] + ': ' + item[1]);
-                },
-                backgroundColor: '#001f00'
-              } );
-
-              } else {
-                WordCloud(document.getElementById('word_cloud'), {
-                list: artistArray
-              } );
+                weightFactor: 1,
+                color: function() {
+                  return (['#ad7cbd', '#214562', '#7d8cb5', '#7f828a', '#9ec6e8'])[Math.floor(Math.random() * 5)]
+                }
+              });
 
               }
 
@@ -115,10 +124,10 @@ var globalTheme = "grunge";
                 defaultTimeObject.style.textDecoration = "underline"
                 defaultTimeObject.style.textUnderlinePosition = "under"
 
-                var defaultThemeObject = document.getElementById('rainbow')
+                var defaultThemeObject = document.getElementById('fall')
                 defaultThemeObject.style.textDecoration = "underline"
                 defaultThemeObject.style.textUnderlinePosition = "under"
-                getTopArtists("medium_term", "rainbow")
+                getTopArtists("medium_term", "fall")
 
                 $('#login').hide();
                 $('#loggedin').show();
@@ -148,29 +157,29 @@ var globalTheme = "grunge";
         console.log("longing...")
     });
 
-    document.getElementById('grunge').addEventListener('click', function() {
-        globalTheme = "grunge"
-        getTopArtists(globalTime, "grunge")
-        console.log("grunging...")
+    document.getElementById('summer').addEventListener('click', function() {
+        globalTheme = "summer"
+        getTopArtists(globalTime, "summer")
+        console.log("summering...")
     });
 
-    document.getElementById('rainbow').addEventListener('click', function() {
-        globalTheme = "rainbow"
-        getTopArtists(globalTime, "rainbow")
-        console.log("rainbowing...")
+    document.getElementById('fall').addEventListener('click', function() {
+        globalTheme = "fall"
+        getTopArtists(globalTime, "fall")
+        console.log("falling...")
     });
 
-    document.getElementById('bubblegum').addEventListener('click', function() {
-        globalTheme = "bubblegum"
-        getTopArtists(globalTime, "bubblegum")
-        console.log("bubbleguming...")
-
-        // var c = document.getElementById("word_cloud");
-        // var ctx = c.getContext("2d");
-        // ctx.fillStyle = "red";
-        // ctx.fillRect(0, 0, 500, 500);
-        // ctx.clearRect(0, 0, 300, 500);
+    document.getElementById('spring').addEventListener('click', function() {
+        globalTheme = "spring"
+        getTopArtists(globalTime, "spring")
+        console.log("springing...")
     });
+
+    document.getElementById('winter').addEventListener('click', function() {
+      globalTheme = "winter"
+      getTopArtists(globalTime, "winter")
+      console.log("wintering...")
+  });
 
     const timeButtons = document.querySelectorAll('.timeBtn');
     const themeButtons = document.querySelectorAll('.themeBtn');
