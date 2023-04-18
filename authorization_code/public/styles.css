@@ -121,6 +121,11 @@ padding-top: 100px;
     text-decoration: none !important;
   }
 
+  #testingHeroku {
+    text-align: center;
+    padding-top: 100px;
+  }
+
 
 
   @font-face {
