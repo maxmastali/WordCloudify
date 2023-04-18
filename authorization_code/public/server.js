@@ -1,5 +1,5 @@
 var globalTime = "medium_term";
-var globalTheme = "grunge";
+var globalTheme = "summer";
 
 (function() {
 
@@ -124,10 +124,10 @@ var globalTheme = "grunge";
                 defaultTimeObject.style.textDecoration = "underline"
                 defaultTimeObject.style.textUnderlinePosition = "under"
 
-                var defaultThemeObject = document.getElementById('fall')
+                var defaultThemeObject = document.getElementById('summer')
                 defaultThemeObject.style.textDecoration = "underline"
                 defaultThemeObject.style.textUnderlinePosition = "under"
-                getTopArtists("medium_term", "fall")
+                getTopArtists("medium_term", "summer")
 
                 $('#login').hide();
                 $('#loggedin').show();
