@@ -42,6 +42,8 @@ app.use(express.static(__dirname + '/public'))
 
 app.get('/login', function(req, res) {
 
+  console.log(process.env.PORT)
+
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
 
@@ -59,6 +61,8 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/callback', function(req, res) {
+
+  console.log(process.env.PORT)
 
   // your application requests refresh and access tokens
   // after checking the state parameter
