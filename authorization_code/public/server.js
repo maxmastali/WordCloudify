@@ -239,7 +239,7 @@ var globalTheme = "summer";
       // createEl.remove();
 
       var container = document.getElementById("cloudContainer");; /* full page */
-      html2canvas(container, { allowTaint: true, scale: 12 }).then(function (canvas) {
+      html2canvas(container, { allowTaint: true, scale: 5 }).then(function (canvas) {
 
           var link = document.createElement("a");
           document.body.appendChild(link);
