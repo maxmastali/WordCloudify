@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '51e166b2971b4a9e9ad999e24f45c76e'; // Your client id
 var client_secret = process.env.spotifyDeveloperSecret; // Your secret
-var redirect_uri = `http://https://wordcloudify.herokuapp.com/callback/`; // Your redirect uri
+var redirect_uri = `http://wordcloudify.herokuapp.com/callback/`; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
