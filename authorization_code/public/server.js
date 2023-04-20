@@ -17,6 +17,11 @@ var globalTheme = "summer";
       return hashParams;
     }
 
+    // sleep time expects milliseconds
+    function sleep (time) {
+      return new Promise((resolve) => setTimeout(resolve, time));
+    }
+
     function getTopArtists(timeRange, theme) {
       $.ajax({
             url: `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}&limit=25`,
@@ -63,7 +68,6 @@ var globalTheme = "summer";
               });
 
 
-
               } else if (theme == "fall") {
                 WordCloud(document.getElementById('word_cloud'), {
                   list: artistArray,
@@ -95,6 +99,12 @@ var globalTheme = "summer";
               });
 
               }
+
+              sleep(150).then(() => {
+                const canvas = document.getElementById('word_cloud')
+                const img = canvas.toDataURL('image/png')
+                document.getElementById('word_cloud_img').src = img
+              });
 
               $('#login').hide();
               $('#loggedin').show();
@@ -128,6 +138,13 @@ var globalTheme = "summer";
                 defaultThemeObject.style.textDecoration = "underline"
                 defaultThemeObject.style.textUnderlinePosition = "under"
                 getTopArtists("medium_term", "summer")
+
+                sleep(400).then(() => {
+                  var wordCloudImage = document.getElementById('word_cloud_img')
+                  wordCloudImage.style.display = "inline"
+                });
+
+
 
                 $('#login').hide();
                 $('#loggedin').show();
@@ -209,7 +226,6 @@ var globalTheme = "summer";
 
     document.getElementById('spotifyImage').setAttribute('draggable', false);
 
-
     function updateButtonStyling(a, buttons) {
       buttons.forEach(button => {
         button.style.textDecoration = "none";
@@ -238,18 +254,24 @@ var globalTheme = "summer";
       // createEl.click();
       // createEl.remove();
 
-      var container = document.getElementById("cloudContainer");; /* full page */
-      html2canvas(container, { allowTaint: true, scale: 5 }).then(function (canvas) {
 
-          var link = document.createElement("a");
-          document.body.appendChild(link);
-          link.download = "top_artists_wordcloud.jpg";
-          link.href = canvas.toDataURL();
-          link.target = '_blank';
-          link.click();
-      });
+      // var container = document.getElementById("cloudContainer");; /* full page */
+      // html2canvas(container, { allowTaint: true, scale: 5 }).then(function (canvas) {
+
+      //     var link = document.createElement("a");
+      //     document.body.appendChild(link);
+      //     link.download = "top_artists_wordcloud.jpg";
+      //     link.href = canvas.toDataURL();
+      //     link.target = '_blank';
+      //     link.click();
+      // });
 
 
+      const image = document.getElementById("word_cloud_img")
+      var imgPath = image.getAttribute('src');
+      var fileName = "top_artists_wordcloud";
+
+      saveAs(imgPath, fileName);
     });
 
   })();

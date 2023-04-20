@@ -98,6 +98,10 @@ padding-top: 100px;
     height: auto;
   }
 
+  #word_cloud {
+    display: none;
+  }
+
   /* #spotifyImage {
     width: 100px;
     height: auto;
@@ -137,6 +141,16 @@ padding-top: 100px;
 
   .label {
     text-align: left;
+  }
+
+  #privacyPolicyContainer {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    margin: 0 auto;
+    width: 50%
   }
 
 
@@ -222,6 +236,14 @@ padding-top: 100px;
     width: 330px;
     height: 350px;
     object-fit: scale-down;
+  }
+
+  #privacyPolicyContainer {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width:100%;
   }
 
 }
