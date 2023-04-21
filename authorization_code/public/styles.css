@@ -251,4 +251,12 @@ padding-top: 100px;
     width:100%;
   }
 
+  #button-group {
+    height: 65px;
+  }
+
+  #button-group2 {
+    height: 65px;
+  }
+
 }
