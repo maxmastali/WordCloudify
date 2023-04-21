@@ -153,6 +153,11 @@ padding-top: 100px;
     width: 50%
   }
 
+  #word_cloud_img {
+    width: 550px;
+    height: 400px;
+  }
+
 
 
 
@@ -207,7 +212,7 @@ padding-top: 100px;
     /* float:left;  */
     /* margin-right:20px; */
     width:max-content;
-    height: auto;
+    height: 320px;
     object-fit: scale-down;
     margin:auto;
   }
@@ -216,26 +221,26 @@ padding-top: 100px;
   #two { 
     background-color: white;
     overflow:hidden;
-    min-height:170px;
+    /* min-height:170px; */
     padding-top: 0px;
     min-width: 500px;
     margin:auto;
+    height: 400px;
   }
 
-  /* #cloudContainer {
-    width: 100%;
-  } */
 
-  #word_cloud {
-    width: 330px;
-    height: 250px;
+  #word_cloud_img {
+    height: 220px;
+    width: 300px;
     object-fit: scale-down;
   }
 
   #cloudContainer {
-    width: 330px;
-    height: 350px;
+    height: 500px;
+    width: 300px;
     object-fit: scale-down;
+    padding-left: 0px;
+    text-align: left;
   }
 
   #privacyPolicyContainer {

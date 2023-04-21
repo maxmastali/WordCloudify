@@ -139,7 +139,7 @@ var globalTheme = "summer";
                 defaultThemeObject.style.textUnderlinePosition = "under"
                 getTopArtists("medium_term", "summer")
 
-                sleep(400).then(() => {
+                sleep(500).then(() => {
                   var wordCloudImage = document.getElementById('word_cloud_img')
                   wordCloudImage.style.display = "inline"
                 });
