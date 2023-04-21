@@ -198,9 +198,22 @@ padding-top: 100px;
     min-width: 500px;
     margin:auto;
   }
+
+  #cloudContainer {
+    text-align: left;
+  }
+
 }
 
 @media screen and (max-width: 780px) {
+  #privacyPolicyContainer {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width:100%;
+  }
+
   .wrapper { 
     overflow:hidden;
     text-align: center;
@@ -208,9 +221,60 @@ padding-top: 100px;
   }
 
   #one {
-    /* background-color: gray; */
-    /* float:left;  */
-    /* margin-right:20px; */
+    width:max-content;
+    height: 450px;
+    object-fit: scale-down;
+    margin:auto;
+    padding-bottom: 30px;
+  }
+
+
+  #two { 
+    padding-top: 20px;
+    min-width: 500px;
+    margin:auto;
+    height: 400px;
+    padding-left: 0px;
+  }
+
+
+  #word_cloud_img {
+    height: 350px;
+    width: 450px;
+    object-fit: scale-down;
+    text-align: center;
+    padding-top: 0px;
+  }
+
+  #cloudContainer {
+    height: 450px;
+    width: 450px;
+    object-fit: scale-down;
+    padding-left: 0px;
+    text-align: left;
+  }
+
+  .timeBtn {
+    max-height: 200px;
+  }
+
+  .themeBtn {
+    max-height: 200px;
+  }
+
+}
+
+@media screen and (max-width: 470px) {
+}
+
+@media screen and (max-width: 380px) {
+  .wrapper { 
+    overflow:hidden;
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  #one {
     width:max-content;
     height: 320px;
     object-fit: scale-down;
@@ -221,7 +285,6 @@ padding-top: 100px;
   #two { 
     background-color: white;
     overflow:hidden;
-    /* min-height:170px; */
     padding-top: 0px;
     min-width: 500px;
     margin:auto;
@@ -233,6 +296,7 @@ padding-top: 100px;
     height: 220px;
     width: 300px;
     object-fit: scale-down;
+    text-align: center;
   }
 
   #cloudContainer {
@@ -241,22 +305,6 @@ padding-top: 100px;
     object-fit: scale-down;
     padding-left: 0px;
     text-align: left;
-  }
-
-  #privacyPolicyContainer {
-    text-align: center;
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width:100%;
-  }
-
-  #button-group {
-    height: 65px;
-  }
-
-  #button-group2 {
-    height: 65px;
   }
 
 }
