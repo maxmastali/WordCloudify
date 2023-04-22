@@ -64,7 +64,7 @@ padding-top: 100px;
 }
 
   .themeBtn {
-    max-height: 15px;
+    max-height: 200px;
   }
 
   .themeBtn:focus {
@@ -73,7 +73,7 @@ padding-top: 100px;
   }
 
   .timeBtn {
-    max-height: 15px;
+    max-height: 200px;
   }
 
   .timeBtn:focus {
@@ -254,17 +254,57 @@ padding-top: 100px;
     text-align: left;
   }
 
-  .timeBtn {
-    max-height: 200px;
-  }
-
-  .themeBtn {
-    max-height: 200px;
-  }
-
+  
 }
 
 @media screen and (max-width: 470px) {
+  #privacyPolicyContainer {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width:100%;
+  }
+
+  .wrapper { 
+    overflow:hidden;
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  #one {
+    width:max-content;
+    height: 390px;
+    object-fit: scale-down;
+    margin:auto;
+    padding-bottom: 30px;
+  }
+
+
+  #two { 
+    padding-top: 20px;
+    min-width: 500px;
+    margin:auto;
+    height: 400px;
+    padding-left: 0px;
+  }
+
+
+  #word_cloud_img {
+    height: 300px;
+    width: 370px;
+    object-fit: scale-down;
+    text-align: center;
+    padding-top: 0px;
+  }
+
+  #cloudContainer {
+    height: 400px;
+    width: 370px;
+    object-fit: scale-down;
+    padding-left: 0px;
+    text-align: left;
+  }
 }
 
 @media screen and (max-width: 380px) {
