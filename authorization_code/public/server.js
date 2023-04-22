@@ -255,23 +255,23 @@ var globalTheme = "summer";
       // createEl.remove();
 
 
-      // var container = document.getElementById("cloudContainer");; /* full page */
-      // html2canvas(container, { allowTaint: true, scale: 5 }).then(function (canvas) {
+      var container = document.getElementById("cloudContainer");; /* full page */
+      html2canvas(container, { allowTaint: true, scale: 5 }).then(function (canvas) {
 
-      //     var link = document.createElement("a");
-      //     document.body.appendChild(link);
-      //     link.download = "top_artists_wordcloud.jpg";
-      //     link.href = canvas.toDataURL();
-      //     link.target = '_blank';
-      //     link.click();
-      // });
+          var link = document.createElement("a");
+          document.body.appendChild(link);
+          link.download = "top_artists_wordcloud.jpg";
+          link.href = canvas.toDataURL();
+          link.target = '_blank';
+          link.click();
+      });
 
 
-      const image = document.getElementById("word_cloud_img")
-      var imgPath = image.getAttribute('src');
-      var fileName = "top_artists_wordcloud";
+      // const image = document.getElementById("cloudContainer")
+      // var imgPath = image.getAttribute('src');
+      // var fileName = "top_artists_wordcloud";
 
-      saveAs(imgPath, fileName);
+      // saveAs(imgPath, fileName);
     });
 
   })();
