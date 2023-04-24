@@ -265,7 +265,36 @@ padding-top: 100px;
     text-align: left;
   }
 
-  
+}
+
+@media screen and (max-width: 530px) {
+
+  #exampleWordCloudImage {
+    height: 350px;
+    width: 450px;
+    object-fit: scale-down;
+    text-align: center;
+    padding-top: 0px;
+    text-align: left;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+
+  #one {
+    height: 300px;
+  }
+
+  #exampleWordCloudImage {
+    height: 350px;
+    width: 350px;
+    object-fit: scale-down;
+    text-align: center;
+    padding-top: 0px;
+    text-align: left;
+  }
+
 }
 
 @media screen and (max-width: 470px) {
@@ -357,5 +386,16 @@ padding-top: 100px;
     padding-left: 0px;
     text-align: left;
   }
+
+  #exampleWordCloudImage {
+    height: 300px;
+    width: 300px;
+    object-fit: scale-down;
+    text-align: center;
+    padding-top: 0px;
+    text-align: left;
+  }
+  
+  
 
 }
