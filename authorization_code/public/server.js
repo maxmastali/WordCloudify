@@ -139,7 +139,7 @@ var globalTheme = "summer";
                 defaultThemeObject.style.textUnderlinePosition = "under"
                 getTopArtists("medium_term", "summer")
 
-                sleep(800).then(() => {
+                sleep(1000).then(() => {
                   var wordCloudImage = document.getElementById('word_cloud_img')
                   wordCloudImage.style.display = "inline"
                 });
@@ -225,6 +225,7 @@ var globalTheme = "summer";
     // }
 
     document.getElementById('spotifyImage').setAttribute('draggable', false);
+    document.getElementById('spotifyWatermark').setAttribute('draggable', false);
 
     function updateButtonStyling(a, buttons) {
       buttons.forEach(button => {
