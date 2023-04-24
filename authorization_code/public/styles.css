@@ -158,6 +158,17 @@ padding-top: 100px;
     height: 400px;
   }
 
+  #spotifyLogin {
+    background-color: white;
+    overflow:hidden;
+    min-height:170px;
+    padding-top: 0px;
+    min-width: 200px;
+    margin:auto;
+  }
+
+
+
 
 
 
