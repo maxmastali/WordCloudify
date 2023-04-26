@@ -148,6 +148,7 @@ var globalTheme = "summer";
 
                 $('#login').hide();
                 $('#loggedin').show();
+                $('#logoutButton').show();
             }
         });
       } else {

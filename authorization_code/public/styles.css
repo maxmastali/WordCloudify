@@ -1,4 +1,4 @@
-#login, #loggedin {
+#login, #loggedin, #logoutButton {
     display: none;
 }
 
@@ -115,7 +115,7 @@ padding-top: 100px;
     text-decoration: none !important;
   }
 
-  #testingHeroku {
+  #footer {
     text-align: center;
     padding-top: 100px;
   }

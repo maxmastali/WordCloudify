@@ -13,6 +13,7 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
+var access_token = '';
 var client_id = '51e166b2971b4a9e9ad999e24f45c76e'; // Your client id
 var client_secret = process.env.spotifyDeveloperSecret; // Your secret
 var redirect_uri = `https://wordcloudify.herokuapp.com/callback/`; // Your redirect uri
@@ -59,6 +60,11 @@ app.get('/login', function(req, res) {
     }));
 });
 
+app.get('/logout', function(req, res) {
+  access_token = '';
+  res.redirect('https://wordcloudify.herokuapp.com/');
+});
+
 app.get('/callback', function(req, res) {
 
   console.log(process.env.PORT)
@@ -93,7 +99,7 @@ app.get('/callback', function(req, res) {
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
 
-        var access_token = body.access_token,
+        access_token = body.access_token,
             refresh_token = body.refresh_token;
 
         var optionsUser = {
