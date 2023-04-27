@@ -62,7 +62,8 @@ app.get('/login', function(req, res) {
 
 app.get('/logout', function(req, res) {
   access_token = '';
-  res.redirect('https://wordcloudify.herokuapp.com/');
+  //res.redirect('https://wordcloudify.herokuapp.com/');
+  res.redirect('https://accounts.spotify.com/logout/');
 });
 
 app.get('/callback', function(req, res) {
