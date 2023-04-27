@@ -98,6 +98,12 @@ var globalTheme = "summer";
                 }
               });
 
+
+              // var newWindow = window.open("https://accounts.spotify.com/logout/");
+              // setTimeout(() => newWindow.close(), 1500);
+              // setTimeout(() => window.location.href = "http://localhost:8888/", 1500);
+
+
               }
 
               sleep(150).then(() => {
@@ -157,6 +163,13 @@ var globalTheme = "summer";
           $('#loggedin').hide();
       }
     }
+
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      var newWindow = window.open("https://accounts.spotify.com/logout/");
+      setTimeout(() => newWindow.close(), 1500);
+      setTimeout(() => window.location.href = "https://wordcloudify.herokuapp.com/", 1500);
+    });
+
     document.getElementById('short_term').addEventListener('click', function() {
         globalTime = "short_term"
         getTopArtists(globalTime, globalTheme)
