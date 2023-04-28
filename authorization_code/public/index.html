@@ -103,18 +103,17 @@
               <h3 style="padding-bottom: 0px;">Presented by
                 <span class="wordcloudifyFont">WordCloudify</span>
               </h3>
-              <img id="word_cloud_img" style="display: none;">
-              <canvas id="word_cloud" class="word_cloud" width="550px" height="400px" style="padding-top: 0px;"></canvas>
+              <!-- <img id="word_cloud_img" style="display: none;"> -->
+
+              <!-- <div style="width:550px; height:400px; position: absolute; background-color: purple; z-index: 1;"></div>
+              <div style="width:550px; height:400px; position: absolute; background-color: blue; z-index: 2;"></div> -->
+              <img id="word_cloud_img" style="position: absolute; z-index: 1;">
+              <canvas id="word_cloud" class="word_cloud" width="550px" height="400px" style="padding-top: 0px; position: absolute; z-index: 2;"></canvas>
               <!-- <img src="./Spotify_Logo_CMYK_Black.png" class="overlay box" id="spotifyWatermark"> -->
               <!-- <img src="./Spotify_Logo_CMYK_Black.png" id="spotifyImage"> -->
 
               <img src="./Spotify_Logo_CMYK_Black.png" id="spotifyWatermark">
             </div>
-
-            
-
-            <!-- <img src="./Spotify_Logo_CMYK_Black.png" class="overlay box" style="width: 150px; height: auto; padding-top: 0px;"> -->
-            
           </div>
     
           <div class="col-sm-5" id="two">

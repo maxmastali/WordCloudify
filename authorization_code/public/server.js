@@ -57,6 +57,12 @@ var globalTheme = "summer";
             //     list: artistArray
             //   } );
 
+            if (screen.width > 780) {
+              $('#word_cloud').show();
+            }
+              //$('#word_cloud_img').show();
+            
+
               if (theme == "summer") {
                 WordCloud(document.getElementById('word_cloud'), {
                 list: artistArray,
@@ -106,9 +112,10 @@ var globalTheme = "summer";
 
               }
 
-              sleep(150).then(() => {
+              sleep(1000).then(() => {
                 const canvas = document.getElementById('word_cloud')
                 const img = canvas.toDataURL('image/png')
+                $('#word_cloud').hide();
                 document.getElementById('word_cloud_img').src = img
               });
 

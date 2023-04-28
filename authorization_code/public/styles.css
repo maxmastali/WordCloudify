@@ -96,11 +96,13 @@ padding-top: 100px;
   #spotifyWatermark {
     width: 100px;
     height: auto;
+    position: absolute;
+    top: 470px;
   }
 
-  #word_cloud {
+  /* #word_cloud {
     display: none;
-  }
+  } */
 
   /* #spotifyImage {
     width: 100px;
@@ -265,6 +267,14 @@ padding-top: 100px;
     text-align: left;
   }
 
+  #spotifyWatermark {
+    top: 400px;
+  }
+
+  #word_cloud {
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: 530px) {
@@ -345,6 +355,10 @@ padding-top: 100px;
     padding-left: 0px;
     text-align: left;
   }
+
+  #spotifyWatermark {
+    top: 345px;
+  }
 }
 
 @media screen and (max-width: 380px) {
@@ -385,6 +399,10 @@ padding-top: 100px;
     object-fit: scale-down;
     padding-left: 0px;
     text-align: left;
+  }
+
+  #spotifyWatermark {
+    top: 290px;
   }
 
   #exampleWordCloudImage {
