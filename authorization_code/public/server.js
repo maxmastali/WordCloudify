@@ -112,10 +112,16 @@ var globalTheme = "summer";
 
               }
 
-              sleep(1000).then(() => {
+              if (screen.width < 780) {
+                $('#word_cloud').hide();
+                $('#word_cloud_img').hide();
+              }
+
+              sleep(800).then(() => {
                 const canvas = document.getElementById('word_cloud')
                 const img = canvas.toDataURL('image/png')
                 $('#word_cloud').hide();
+                $('#word_cloud_img').show();
                 document.getElementById('word_cloud_img').src = img
               });
 
