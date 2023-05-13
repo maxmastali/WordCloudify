@@ -14,7 +14,7 @@ Once installed, clone the repository and install its dependencies running:
 
 ### Using your own credentials
 
-In order to run the application locally,You will need to register your app and get your own credentials from Spotify's Developer Dashboard.
+In order to run the application locally, you will need to register your app and get your own credentials from Spotify's Developer Dashboard.
 
 To do this, go to [your Spotify for Developers Dashboard](https://beta.developer.spotify.com/dashboard) and create your application. In my own development process, I registered this redirect URI:
 
