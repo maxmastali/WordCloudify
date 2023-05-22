@@ -42,27 +42,12 @@ var globalTheme = "summer";
               }
               console.log(artistArray)
 
-              // const buttons = document.querySelectorAll('.btn-outline-secondary');
-              // buttons.forEach(button => {
-              //   button.addEventListener('click', () => {
-              //     //document.querySelector('.special')?.classList.remove('special');
-              //     button.classList.add('special');
-              //   })
-              // })
-
-              
-
               WordCloud.minFontSize = "25px"
-            //   WordCloud(document.getElementById('word_cloud'), {
-            //     list: artistArray
-            //   } );
 
             if (screen.width > 780) {
               $('#word_cloud').show();
             }
-              //$('#word_cloud_img').show();
             
-
               if (theme == "summer") {
                 WordCloud(document.getElementById('word_cloud'), {
                 list: artistArray,
@@ -103,13 +88,6 @@ var globalTheme = "summer";
                   return (['#ad7cbd', '#214562', '#7d8cb5', '#7f828a', '#9ec6e8'])[Math.floor(Math.random() * 5)]
                 }
               });
-
-
-              // var newWindow = window.open("https://accounts.spotify.com/logout/");
-              // setTimeout(() => newWindow.close(), 1500);
-              // setTimeout(() => window.location.href = "http://localhost:8888/", 1500);
-
-
               }
 
               if (screen.width < 780) {
@@ -186,43 +164,36 @@ var globalTheme = "summer";
     document.getElementById('short_term').addEventListener('click', function() {
         globalTime = "short_term"
         getTopArtists(globalTime, globalTheme)
-        console.log("shorting...")
       });
 
     document.getElementById('medium_term').addEventListener('click', function() {
         globalTime = "medium_term"
         getTopArtists(globalTime, globalTheme)
-        console.log("mediuming...")
     });
 
     document.getElementById('long_term').addEventListener('click', function() {
         globalTime = "long_term"
         getTopArtists(globalTime, globalTheme)
-        console.log("longing...")
     });
 
     document.getElementById('summer').addEventListener('click', function() {
         globalTheme = "summer"
         getTopArtists(globalTime, "summer")
-        console.log("summering...")
     });
 
     document.getElementById('fall').addEventListener('click', function() {
         globalTheme = "fall"
         getTopArtists(globalTime, "fall")
-        console.log("falling...")
     });
 
     document.getElementById('spring').addEventListener('click', function() {
         globalTheme = "spring"
         getTopArtists(globalTime, "spring")
-        console.log("springing...")
     });
 
     document.getElementById('winter').addEventListener('click', function() {
       globalTheme = "winter"
       getTopArtists(globalTime, "winter")
-      console.log("wintering...")
   });
 
     const timeButtons = document.querySelectorAll('.timeBtn');
@@ -240,48 +211,19 @@ var globalTheme = "summer";
       });
     });
 
-
-    // var canvas = document.getElementById('layer2')
-    // if (canvas.getContext) {
-    //   var layout = canvas.getContext('2d');
-    //   var image = new Image();
-    //   image.src = "./Spotify_Logo_CMYK_Black.png";
-    //   image.onload = function() {
-    //   layout.drawImage(image, 0, 0, 100, 30);
-    // }
-    // }
-
     document.getElementById('spotifyImage').setAttribute('draggable', false);
     document.getElementById('spotifyWatermark').setAttribute('draggable', false);
 
     function updateButtonStyling(a, buttons) {
       buttons.forEach(button => {
         button.style.textDecoration = "none";
-        //document.querySelector('.special')?.classList.remove('special')
-        //button.classList.add('special');
       });
-      //a.classList.add('special')
-      //a.style.background = "red";
+
       a.style.textDecoration = "underline"
       a.style.textUnderlinePosition = "under"
     }
 
     document.getElementById('download').addEventListener('click', function(e) {
-      // let canvas = document.getElementById('cloudContainer')
-
-      // // Convert our canvas to a data URL
-      // let canvasUrl = canvas.toDataURL();
-      // // Create an anchor, and set the href value to our data URL
-      // const createEl = document.createElement('a');
-      // createEl.href = canvasUrl;
-  
-      // // This is the name of our downloaded file
-      // createEl.download = "top-artists-wordcloud";
-  
-      // // Click the download button, causing a download, and then remove it
-      // createEl.click();
-      // createEl.remove();
-
 
       var container = document.getElementById("cloudContainer");; /* full page */
       html2canvas(container, { allowTaint: true, scale: 5 }).then(function (canvas) {
@@ -293,13 +235,6 @@ var globalTheme = "summer";
           link.target = '_blank';
           link.click();
       });
-
-
-      // const image = document.getElementById("cloudContainer")
-      // var imgPath = image.getAttribute('src');
-      // var fileName = "top_artists_wordcloud";
-
-      // saveAs(imgPath, fileName);
     });
 
   })();

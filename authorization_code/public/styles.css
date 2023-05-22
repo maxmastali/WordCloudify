@@ -1,67 +1,60 @@
-#login, #loggedin, #logoutButton {
-    display: none;
-}
+  #login, #loggedin, #logoutButton {
+      display: none;
+  }
 
-.wrapper { 
-overflow:hidden;
-padding-left: 170px;
-}
+  .wrapper { 
+    overflow:hidden;
+    padding-left: 170px;
+  }
 
-.wrapper div {
-min-height: 200px;
-padding: 10px;
-}
+  .wrapper div {
+    min-height: 200px;
+    padding: 10px;
+  }
 
-#button-group {
-  max-height: 70px;
-  min-height: 50px;
-  max-width: 450px;
-  min-width: 100px;
-  padding-left: 0px;
-  padding-top: 0px;
-  /* background-color: antiquewhite; */
-}
+  #button-group {
+    max-height: 70px;
+    min-height: 50px;
+    max-width: 450px;
+    min-width: 100px;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
 
-#button-group2 {
-  max-height: 70px;
-  min-height: 50px;
-  padding-left: 0px;
-  padding-top: 0px;
-  /* background-color: antiquewhite; */
-}
+  #button-group2 {
+    max-height: 70px;
+    min-height: 50px;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
 
-.leftMostCustomBtn {
-  padding-left: 0px;
-}
+  .leftMostCustomBtn {
+    padding-left: 0px;
+  }
 
-#outer-div {
-  width: 100%;
-  text-align: center;
-  background-color: #0666a3
-}
+  #outer-div {
+    width: 100%;
+    text-align: center;
+    background-color: #0666a3
+  }
 
-#inner-div {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 3px;
-  background-color: #8ebf42
-}
+  #inner-div {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 3px;
+    background-color: #8ebf42
+  }
 
-#one {
-/* background-color: gray; */
-/* float:left;  */
-/* margin-right:20px; */
-width:200px;
-min-width: 550px;
-}
-#two { 
-/* background-color: white; */
-overflow:hidden;
-/* margin:10px;
-border:2px dashed #ccc; */
-min-height:170px;
-padding-top: 100px;
-}
+  #one {
+    width:200px;
+    min-width: 550px;
+  }
+
+  #two { 
+    overflow:hidden;
+    min-height:170px;
+    padding-top: 100px;
+  }
 
   .themeBtn {
     max-height: 200px;
@@ -90,7 +83,6 @@ padding-top: 100px;
   #cloudContainer {
     width: 550px;
     height: 500px;
-    /* position: relative; */
   }
   
   #spotifyWatermark {
@@ -99,18 +91,6 @@ padding-top: 100px;
     position: absolute;
     top: 470px;
   }
-
-  /* #word_cloud {
-    display: none;
-  } */
-
-  /* #spotifyImage {
-    width: 100px;
-    height: auto;
-    position: absolute;
-    z-index: 3;
-  } */
-
 
   #navBarWordCloudify {
     color: black;
@@ -121,8 +101,6 @@ padding-top: 100px;
     text-align: center;
     padding-top: 100px;
   }
-
-
 
   @font-face {
     font-family: myFirstFont;
@@ -169,23 +147,6 @@ padding-top: 100px;
     margin:auto;
   }
 
-
-
-
-
-
-
-@media screen and (max-width: 1000px) {
-  /* #one { 
-      float: none;
-      margin-right:0;
-      width:auto;
-      border:0;
-      border-bottom:2px solid #000;   
-  } */
-}
-
-
 @media screen and (max-width: 1200px) {
   .wrapper { 
     overflow:hidden;
@@ -194,9 +155,6 @@ padding-top: 100px;
   }
 
   #one {
-    /* background-color: gray; */
-    /* float:left;  */
-    /* margin-right:20px; */
     width:200px;
     min-width: 550px;
     margin:auto;
@@ -250,7 +208,6 @@ padding-top: 100px;
     padding-left: 0px;
   }
 
-
   #word_cloud_img {
     height: 350px;
     width: 450px;
@@ -261,7 +218,7 @@ padding-top: 100px;
 
   #cloudContainer {
     height: 450px;
-    width: 450px;
+    width: 500px;
     object-fit: scale-down;
     padding-left: 0px;
     text-align: left;
@@ -334,7 +291,6 @@ padding-top: 100px;
     padding-bottom: 30px;
   }
 
-
   #two { 
     padding-top: 20px;
     min-width: 500px;
@@ -363,6 +319,7 @@ padding-top: 100px;
   #spotifyWatermark {
     top: 345px;
   }
+
 }
 
 @media screen and (max-width: 380px) {
@@ -379,7 +336,6 @@ padding-top: 100px;
     margin:auto;
   }
 
-
   #two { 
     background-color: white;
     overflow:hidden;
@@ -388,7 +344,6 @@ padding-top: 100px;
     margin:auto;
     height: 400px;
   }
-
 
   #word_cloud_img {
     height: 220px;
@@ -432,4 +387,5 @@ padding-top: 100px;
   .themeBtn {
     font-size: 15px;
   }
+
 }

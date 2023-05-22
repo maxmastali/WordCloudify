@@ -77,41 +77,18 @@
             <a href="/login" class="btn btn-success">Log in with Spotify</a>
           </div>
         </div>
-
-        <!-- <div class="row">
-          <div class="col-sm-6" style="background-color: aquamarine;">
-            <img class="media-object" width="300" src="./exampleWordcloud.png" />
-          </div>
-          <div class="col-sm-6" style="background-color:pink;">
-            <h2>Generate a word cloud with your top artists</h2>
-            <a href="/login" class="btn btn-success">Log in with Spotify</a>
-          </div>
-        </div> -->
       </div>
       <div id="loggedin">
         <div id="top">
         </div>
         <div class="row wrapper">
           <div id="one" class="col-sm-5">
-            <!-- <div style="position: relative;">
-              <canvas id="word_cloud" width="500" height="500" 
-                style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
-              <canvas id="layer2" width="500" height="500" 
-                style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
-             </div> -->
             <div id="cloudContainer">
               <h3 style="padding-bottom: 0px;">Presented by
                 <span class="wordcloudifyFont">WordCloudify</span>
               </h3>
-              <!-- <img id="word_cloud_img" style="display: none;"> -->
-
-              <!-- <div style="width:550px; height:400px; position: absolute; background-color: purple; z-index: 1;"></div>
-              <div style="width:550px; height:400px; position: absolute; background-color: blue; z-index: 2;"></div> -->
               <img id="word_cloud_img" style="position: absolute; z-index: 1;">
               <canvas id="word_cloud" class="word_cloud" width="550px" height="400px" style="padding-top: 0px; position: absolute; z-index: 2;"></canvas>
-              <!-- <img src="./Spotify_Logo_CMYK_Black.png" class="overlay box" id="spotifyWatermark"> -->
-              <!-- <img src="./Spotify_Logo_CMYK_Black.png" id="spotifyImage"> -->
-
               <img src="./Spotify_Logo_CMYK_Black.png" id="spotifyWatermark">
             </div>
           </div>
@@ -141,13 +118,7 @@
         <img src="./Spotify_Logo_CMYK_Black.png" style="width: 100px; height: auto;" id="spotifyImage">
         <h4 style="padding-top: 10px;"> Made by <a href="https://linktr.ee/maxmastali">Max Mastali</a></h2>
       </div>
-      
-    <!-- <div class="wrapper">
-      <div id="one">one</div>
-      <div id="two">two</div>
-    </div> -->
 
-    <script src="./FileSaver.js"></script>
     <script src="./wordcloud2.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="./server.js"></script>

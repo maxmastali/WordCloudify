@@ -137,7 +137,6 @@ app.get('/callback', function(req, res) {
 });
 
 console.log('Listening on 8888');
-// app.listen(8888);
 app.listen(process.env.PORT || 8888, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   console.log(process.env.PORT)
