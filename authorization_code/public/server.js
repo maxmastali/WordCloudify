@@ -88,7 +88,17 @@ var globalTheme = "summer";
                   return (['#ad7cbd', '#214562', '#7d8cb5', '#7f828a', '#9ec6e8'])[Math.floor(Math.random() * 5)]
                 }
               });
-              }
+
+              } else if (theme == "custom") {
+                WordCloud(document.getElementById('word_cloud'), {
+                  list: artistArray,
+                  gridSize: 5,
+                  weightFactor: 1,
+                  color: function() {
+                    return (['#000000', '#000000', '#000000', '#000000', '#000000'])[Math.floor(Math.random() * 5)]
+                  }
+                });
+                }
 
               if (screen.width < 780) {
                 $('#word_cloud').hide();
@@ -194,7 +204,12 @@ var globalTheme = "summer";
     document.getElementById('winter').addEventListener('click', function() {
       globalTheme = "winter"
       getTopArtists(globalTime, "winter")
-  });
+    });
+
+    document.getElementById('custom').addEventListener('click', function() {
+      globalTheme = "custom"
+      getTopArtists(globalTime, "custom")
+    });
 
     const timeButtons = document.querySelectorAll('.timeBtn');
     const themeButtons = document.querySelectorAll('.themeBtn');
