@@ -1,6 +1,12 @@
 var globalTime = "medium_term";
 var globalTheme = "summer";
 
+var globalFirstCustomColor = '#000000';
+var globalSecondCustomColor = '#000000';
+var globalThirdCustomColor = '#000000';
+var globalFourthCustomColor = '#000000';
+var globalFifthCustomColor = '#000000';
+
 (function() {
 
     /**
@@ -95,7 +101,7 @@ var globalTheme = "summer";
                   gridSize: 5,
                   weightFactor: 1,
                   color: function() {
-                    return (['#000000', '#000000', '#000000', '#000000', '#000000'])[Math.floor(Math.random() * 5)]
+                    return ([globalFirstCustomColor, globalSecondCustomColor, globalThirdCustomColor, globalFourthCustomColor, globalFifthCustomColor])[Math.floor(Math.random() * 5)]
                   }
                 });
                 }
@@ -209,6 +215,36 @@ var globalTheme = "summer";
     document.getElementById('custom').addEventListener('click', function() {
       globalTheme = "custom"
       getTopArtists(globalTime, "custom")
+    });
+
+    document.getElementById('first').addEventListener('input', function() {
+      picker = document.getElementById('first');
+      globalFirstCustomColor = picker.value;
+      getTopArtists(globalTime, "custom");
+    });
+
+    document.getElementById('second').addEventListener('input', function() {
+      picker = document.getElementById('second');
+      globalSecondCustomColor = picker.value;
+      getTopArtists(globalTime, "custom");
+    });
+
+    document.getElementById('third').addEventListener('input', function() {
+      picker = document.getElementById('third');
+      globalThirdCustomColor = picker.value;
+      getTopArtists(globalTime, "custom");
+    });
+
+    document.getElementById('fourth').addEventListener('input', function() {
+      picker = document.getElementById('fourth');
+      globalFourthCustomColor = picker.value;
+      getTopArtists(globalTime, "custom");
+    });
+
+    document.getElementById('fifth').addEventListener('input', function() {
+      picker = document.getElementById('fifth');
+      globalFifthCustomColor = picker.value;
+      getTopArtists(globalTime, "custom");
     });
 
     const timeButtons = document.querySelectorAll('.timeBtn');
