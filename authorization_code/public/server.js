@@ -193,28 +193,33 @@ var globalFifthCustomColor = '#000000';
     });
 
     document.getElementById('summer').addEventListener('click', function() {
+        document.getElementById('custom-colors').style.display = 'none';
         globalTheme = "summer"
-        getTopArtists(globalTime, "summer")
+        getTopArtists(globalTime, globalTheme)
     });
 
     document.getElementById('fall').addEventListener('click', function() {
+        document.getElementById('custom-colors').style.display = 'none';
         globalTheme = "fall"
-        getTopArtists(globalTime, "fall")
+        getTopArtists(globalTime, globalTheme)
     });
 
     document.getElementById('spring').addEventListener('click', function() {
+        document.getElementById('custom-colors').style.display = 'none';
         globalTheme = "spring"
-        getTopArtists(globalTime, "spring")
+        getTopArtists(globalTime, globalTheme)
     });
 
     document.getElementById('winter').addEventListener('click', function() {
+      document.getElementById('custom-colors').style.display = 'none';
       globalTheme = "winter"
-      getTopArtists(globalTime, "winter")
+      getTopArtists(globalTime, globalTheme)
     });
 
     document.getElementById('custom').addEventListener('click', function() {
+      document.getElementById('custom-colors').style.display = 'block';
       globalTheme = "custom"
-      getTopArtists(globalTime, "custom")
+      getTopArtists(globalTime, globalTheme)
     });
 
     document.getElementById('first').addEventListener('input', function() {
@@ -226,7 +231,7 @@ var globalFifthCustomColor = '#000000';
     document.getElementById('second').addEventListener('input', function() {
       picker = document.getElementById('second');
       globalSecondCustomColor = picker.value;
-      getTopArtists(globalTime, "custom");
+      getTopArtists(globalTime, globalTheme);
     });
 
     document.getElementById('third').addEventListener('input', function() {

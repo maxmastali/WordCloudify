@@ -28,6 +28,11 @@
     padding-top: 0px;
   }
 
+  #button-group3 {
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+
   .leftMostCustomBtn {
     padding-left: 0px;
   }
@@ -390,19 +395,12 @@
 
 }
 
-p,
-label {
-  font:
-    1rem 'Fira Sans',
-    sans-serif;
-}
-
 input {
   margin: 0.4rem;
 }
 
 #custom-colors {
-  max-height: 70px;
+  max-height: 100px;
   min-height: 50px;
   padding-left: 0px;
   padding-top: 0px;
