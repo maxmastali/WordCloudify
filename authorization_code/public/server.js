@@ -1,6 +1,8 @@
 var globalTime = "medium_term";
 var globalTheme = "summer";
 
+var globalNumberOfCustomColors = 3;
+
 var globalFirstCustomColor = '#000000';
 var globalSecondCustomColor = '#000000';
 var globalThirdCustomColor = '#000000';
@@ -101,7 +103,18 @@ var globalFifthCustomColor = '#000000';
                   gridSize: 5,
                   weightFactor: 1,
                   color: function() {
-                    return ([globalFirstCustomColor, globalSecondCustomColor, globalThirdCustomColor, globalFourthCustomColor, globalFifthCustomColor])[Math.floor(Math.random() * 5)]
+                    switch (globalNumberOfCustomColors) {
+                      case 1:
+                        return ([globalFirstCustomColor])[Math.floor(Math.random() * globalNumberOfCustomColors)]
+                      case 2:
+                        return ([globalFirstCustomColor, globalSecondCustomColor])[Math.floor(Math.random() * globalNumberOfCustomColors)]
+                      case 3:
+                        return ([globalFirstCustomColor, globalSecondCustomColor, globalThirdCustomColor])[Math.floor(Math.random() * globalNumberOfCustomColors)]
+                      case 4:
+                        return ([globalFirstCustomColor, globalSecondCustomColor, globalThirdCustomColor, globalFourthCustomColor])[Math.floor(Math.random() * globalNumberOfCustomColors)]
+                      case 5:
+                        return ([globalFirstCustomColor, globalSecondCustomColor, globalThirdCustomColor, globalFourthCustomColor, globalFifthCustomColor])[Math.floor(Math.random() * globalNumberOfCustomColors)]
+                    }
                   }
                 });
                 }
@@ -151,6 +164,17 @@ var globalFifthCustomColor = '#000000';
                 defaultThemeObject.style.textDecoration = "underline"
                 defaultThemeObject.style.textUnderlinePosition = "under"
                 getTopArtists("medium_term", "summer")
+
+                var defaultNumberOfCustomColorsObject = document.getElementById('3')
+                defaultNumberOfCustomColorsObject.style.textDecoration = "underline"
+                defaultNumberOfCustomColorsObject.style.textUnderlinePosition = "under"
+
+                globalNumberOfCustomColors = 3;
+                document.getElementById('first').style.visibility = 'visible';
+                document.getElementById('second').style.visibility = 'visible';
+                document.getElementById('third').style.visibility = 'visible';
+                document.getElementById('fourth').style.visibility = 'hidden';
+                document.getElementById('fifth').style.visibility = 'hidden';
 
                 sleep(1000).then(() => {
                   var wordCloudImage = document.getElementById('word_cloud_img')
@@ -222,6 +246,61 @@ var globalFifthCustomColor = '#000000';
       getTopArtists(globalTime, globalTheme)
     });
 
+    document.getElementById('1').addEventListener('click', function() {
+      globalNumberOfCustomColors = 1;
+      document.getElementById('first').style.visibility = 'visible';
+      document.getElementById('second').style.visibility = 'hidden';
+      document.getElementById('third').style.visibility = 'hidden';
+      document.getElementById('fourth').style.visibility = 'hidden';
+      document.getElementById('fifth').style.visibility = 'hidden';
+      globalTheme = "custom"
+      getTopArtists(globalTime, globalTheme)
+    });
+
+    document.getElementById('2').addEventListener('click', function() {
+      globalNumberOfCustomColors = 2;
+      document.getElementById('first').style.visibility = 'visible';
+      document.getElementById('second').style.visibility = 'visible';
+      document.getElementById('third').style.visibility = 'hidden';
+      document.getElementById('fourth').style.visibility = 'hidden';
+      document.getElementById('fifth').style.visibility = 'hidden';
+      globalTheme = "custom"
+      getTopArtists(globalTime, globalTheme)
+    });
+
+    document.getElementById('3').addEventListener('click', function() {
+      globalNumberOfCustomColors = 3;
+      document.getElementById('first').style.visibility = 'visible';
+      document.getElementById('second').style.visibility = 'visible';
+      document.getElementById('third').style.visibility = 'visible';
+      document.getElementById('fourth').style.visibility = 'hidden';
+      document.getElementById('fifth').style.visibility = 'hidden';
+      globalTheme = "custom"
+      getTopArtists(globalTime, globalTheme)
+    });
+
+    document.getElementById('4').addEventListener('click', function() {
+      globalNumberOfCustomColors = 4;
+      document.getElementById('first').style.visibility = 'visible';
+      document.getElementById('second').style.visibility = 'visible';
+      document.getElementById('third').style.visibility = 'visible';
+      document.getElementById('fourth').style.visibility = 'visible';
+      document.getElementById('fifth').style.visibility = 'hidden';
+      globalTheme = "custom"
+      getTopArtists(globalTime, globalTheme)
+    });
+
+    document.getElementById('5').addEventListener('click', function() {
+      globalNumberOfCustomColors = 5;
+      document.getElementById('first').style.visibility = 'visible';
+      document.getElementById('second').style.visibility = 'visible';
+      document.getElementById('third').style.visibility = 'visible';
+      document.getElementById('fourth').style.visibility = 'visible';
+      document.getElementById('fifth').style.visibility = 'visible';
+      globalTheme = "custom"
+      getTopArtists(globalTime, globalTheme)
+    });
+
     document.getElementById('first').addEventListener('input', function() {
       picker = document.getElementById('first');
       globalFirstCustomColor = picker.value;
@@ -254,6 +333,7 @@ var globalFifthCustomColor = '#000000';
 
     const timeButtons = document.querySelectorAll('.timeBtn');
     const themeButtons = document.querySelectorAll('.themeBtn');
+    const pickerButtons = document.querySelectorAll('.pickerBtn');
 
     timeButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -264,6 +344,12 @@ var globalFifthCustomColor = '#000000';
     themeButtons.forEach(button => {
       button.addEventListener('click', function() {
         updateButtonStyling(button, themeButtons)
+      });
+    });
+
+    pickerButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        updateButtonStyling(button, pickerButtons)
       });
     });
 

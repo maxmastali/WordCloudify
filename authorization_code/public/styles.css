@@ -37,19 +37,6 @@
     padding-left: 0px;
   }
 
-  #outer-div {
-    width: 100%;
-    text-align: center;
-    background-color: #0666a3
-  }
-
-  #inner-div {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 3px;
-    background-color: #8ebf42
-  }
-
   #one {
     width:200px;
     min-width: 550px;
@@ -58,7 +45,7 @@
   #two { 
     overflow:hidden;
     min-height:170px;
-    padding-top: 100px;
+    padding-top: 80px;
   }
 
   .themeBtn {
@@ -75,6 +62,15 @@
   }
 
   .timeBtn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .pickerBtn {
+    max-height: 200px;
+  }
+
+  .pickerBtn:focus {
     outline: none;
     box-shadow: none;
   }
@@ -400,7 +396,7 @@ input {
 }
 
 #custom-colors {
-  max-height: 100px;
+  max-height: 150px;
   min-height: 50px;
   padding-left: 0px;
   padding-top: 0px;
