@@ -31,10 +31,18 @@
   #button-group3 {
     padding-left: 0px;
     padding-top: 0px;
+    margin-left: 0px;
+  }
+
+  #custom-colors {
+    max-height: 150px;
+    min-height: 50px;
+    padding-left: 0px;
+    padding-top: 0px;
   }
 
   .leftMostCustomBtn {
-    padding-left: 0px;
+    padding-left: 15px;
   }
 
   #one {
@@ -68,11 +76,20 @@
 
   .pickerBtn {
     max-height: 200px;
+    padding-top: 0px;
   }
 
   .pickerBtn:focus {
     outline: none;
     box-shadow: none;
+  }
+
+  #pickerLabel {
+    padding-top: 4px;
+  }
+
+  .picker {
+    float: left;
   }
 
   .overlay {
@@ -296,7 +313,7 @@
     padding-top: 20px;
     min-width: 500px;
     margin:auto;
-    height: 400px;
+    height: 450px;
     padding-left: 0px;
   }
 
@@ -321,6 +338,14 @@
     top: 345px;
   }
 
+  .themeBtn {
+    font-size: 0.75em;
+  }
+
+  .pickerBtn {
+    font-size: 0.75em;
+  }
+
 }
 
 @media screen and (max-width: 380px) {
@@ -343,7 +368,6 @@
     padding-top: 0px;
     min-width: 500px;
     margin:auto;
-    height: 400px;
   }
 
   #word_cloud_img {
@@ -374,6 +398,10 @@
     text-align: left;
   }
 
+  .themeBtn {
+    font-size: 0.75em;
+  }
+
 }
 
 @media screen and (max-width: 345px) {
@@ -382,22 +410,11 @@
   }
 
   .timeBtn {
-    font-size: 15px;
-  }
-
-  .themeBtn {
-    font-size: 15px;
+    font-size: 0.75em;
   }
 
 }
 
 input {
   margin: 0.4rem;
-}
-
-#custom-colors {
-  max-height: 150px;
-  min-height: 50px;
-  padding-left: 0px;
-  padding-top: 0px;
 }
