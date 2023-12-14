@@ -346,6 +346,15 @@
     font-size: 0.75em;
   }
 
+  .leftMostCustomBtn {
+    padding-left: 0px;
+  }
+
+  #pickerLabel {
+    padding-top: 6px;
+    font-size: 1em;
+  }
+
 }
 
 @media screen and (max-width: 380px) {
