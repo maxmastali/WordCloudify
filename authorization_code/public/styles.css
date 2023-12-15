@@ -411,6 +411,18 @@
     font-size: 0.75em;
   }
 
+  .timeBtn {
+    font-size: 0.75em;
+  }
+
+  .themeBtn {
+    font-size: 0.75em;
+  }
+
+  .label {
+    font-size: 1em;
+  }
+
 }
 
 @media screen and (max-width: 345px) {
