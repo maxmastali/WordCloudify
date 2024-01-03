@@ -39,6 +39,7 @@
     min-height: 50px;
     padding-left: 0px;
     padding-top: 0px;
+    display: none;
   }
 
   .leftMostCustomBtn {
@@ -54,6 +55,10 @@
     overflow:hidden;
     min-height:170px;
     padding-top: 80px;
+  }
+
+  #first {
+    margin-left: 0px;
   }
 
   .themeBtn {
